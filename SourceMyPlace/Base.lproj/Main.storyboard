@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -12,7 +11,7 @@
         <!--Right View Controller-->
         <scene sceneID="bvR-W9-qnC">
             <objects>
-                <viewController storyboardIdentifier="RightViewController" id="In8-Mc-X7I" customClass="RightViewController" customModule="SlideMenuControllerSwift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RightViewController" id="In8-Mc-X7I" customClass="RightViewController" customModule="MyPlace" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Uwi-SA-NOq"/>
                         <viewControllerLayoutGuide type="bottom" id="wFn-Mp-0fQ"/>
@@ -48,7 +47,7 @@
         <!--Left View Controller-->
         <scene sceneID="Nq8-8X-A5v">
             <objects>
-                <viewController storyboardIdentifier="LeftViewController" id="Mog-8S-rDV" customClass="LeftViewController" customModule="SlideMenuControllerSwift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LeftViewController" id="Mog-8S-rDV" customClass="LeftViewController" customModule="MyPlace" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ojD-hk-v0s"/>
                         <viewControllerLayoutGuide type="bottom" id="hXM-FI-ON0"/>
@@ -88,7 +87,7 @@
         <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="MainViewController" id="BYZ-38-t0r" customClass="MainViewController" customModule="SlideMenuControllerSwift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainViewController" id="BYZ-38-t0r" customClass="MainViewController" customModule="MyPlace" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -96,37 +95,19 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MNw-nN-8ak">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <color key="backgroundColor" red="0.89411764705882357" green="0.9137254901960784" blue="0.9137254901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="v6M-NJ-qDu"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="yky-PA-Jge"/>
-                                </connections>
-                            </tableView>
-                        </subviews>
                         <color key="backgroundColor" red="0.89411764705882357" green="0.9137254901960784" blue="0.9137254901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="MNw-nN-8ak" secondAttribute="trailing" id="0gj-9S-3k5"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="MNw-nN-8ak" secondAttribute="bottom" id="47o-gV-Kd1"/>
-                            <constraint firstItem="MNw-nN-8ak" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="xbT-am-qCO"/>
-                            <constraint firstItem="MNw-nN-8ak" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="zcu-wF-y35"/>
-                        </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="600"/>
-                    <connections>
-                        <outlet property="tableView" destination="MNw-nN-8ak" id="OEx-Z5-027"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="130" y="120"/>
         </scene>
         <!--Swift View Controller-->
         <scene sceneID="qDe-KX-ho1">
             <objects>
-                <viewController storyboardIdentifier="SwiftViewController" id="I9w-x4-mAi" customClass="SwiftViewController" customModule="SlideMenuControllerSwift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SwiftViewController" id="I9w-x4-mAi" customClass="SwiftViewController" customModule="MyPlace" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jtW-TN-dF4"/>
                         <viewControllerLayoutGuide type="bottom" id="2n0-fL-47k"/>
@@ -163,7 +144,7 @@
         <!--Java View Controller-->
         <scene sceneID="4cK-mI-MCG">
             <objects>
-                <viewController storyboardIdentifier="JavaViewController" id="TvI-C9-lSF" customClass="JavaViewController" customModule="SlideMenuControllerSwift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="JavaViewController" id="TvI-C9-lSF" customClass="JavaViewController" customModule="MyPlace" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qOh-Be-bJ9"/>
                         <viewControllerLayoutGuide type="bottom" id="yPA-d7-Ile"/>
@@ -200,7 +181,7 @@
         <!--Go View Controller-->
         <scene sceneID="adq-KJ-u5Z">
             <objects>
-                <viewController storyboardIdentifier="GoViewController" id="pwN-Wv-Ioh" customClass="GoViewController" customModule="SlideMenuControllerSwift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GoViewController" id="pwN-Wv-Ioh" customClass="GoViewController" customModule="MyPlace" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="QEC-CO-vAa"/>
                         <viewControllerLayoutGuide type="bottom" id="4w6-Ph-vE3"/>
@@ -237,7 +218,7 @@
         <!--Non Menu Controller-->
         <scene sceneID="d7w-0k-xlq">
             <objects>
-                <viewController storyboardIdentifier="NonMenuController" id="dnB-Mf-802" customClass="NonMenuController" customModule="SlideMenuControllerSwift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NonMenuController" id="dnB-Mf-802" customClass="NonMenuController" customModule="MyPlace" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="P9h-CD-Kay"/>
                         <viewControllerLayoutGuide type="bottom" id="2A9-xu-LZI"/>

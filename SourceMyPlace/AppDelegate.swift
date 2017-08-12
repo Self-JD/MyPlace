@@ -7,6 +7,9 @@
 
 import UIKit
 import CoreData
+import GoogleMaps
+import GooglePlaces
+
 
 @objc protocol MyGoogleObjDelegate{
     @objc optional func signInFinished()
@@ -65,6 +68,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate,GIDSignInDelegate {
             print("Error we have\(String(describing: configureError))")
         }
         GIDSignIn.sharedInstance().delegate = self
+        
+        GMSServices.provideAPIKey("AIzaSyCzJuvi7YSouIUDenzXVlfK2a_SSuDhQWc")
+        GMSPlacesClient.provideAPIKey("AIzaSyCzJuvi7YSouIUDenzXVlfK2a_SSuDhQWc")
         
         return true
     }
