@@ -194,7 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				C5BA8AA41A43E24C00863FB9 /* Source */,
-				C539E6431A315E87003B7CC7 /* SlideMenuControllerSwift */,
+				C539E6431A315E87003B7CC7 /* SourceMyPlace */,
 				C539E65C1A315E87003B7CC7 /* SlideMenuControllerSwiftTests */,
 				C539E6421A315E87003B7CC7 /* Products */,
 				661AAF03E5A00404D32A88BB /* Pods */,
@@ -212,7 +212,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C539E6431A315E87003B7CC7 /* SlideMenuControllerSwift */ = {
+		C539E6431A315E87003B7CC7 /* SourceMyPlace */ = {
 			isa = PBXGroup;
 			children = (
 				C539E6461A315E87003B7CC7 /* AppDelegate.swift */,
@@ -227,7 +227,7 @@
 				C539E6441A315E87003B7CC7 /* Supporting Files */,
 				746FCBFF1F3E0DDF0090A12C /* MyPlace-Bridging-Header.h */,
 			);
-			path = SlideMenuControllerSwift;
+			path = SourceMyPlace;
 			sourceTree = "<group>";
 		};
 		C539E6441A315E87003B7CC7 /* Supporting Files */ = {
@@ -847,7 +847,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = QY7YNV42K5;
-				INFOPLIST_FILE = SlideMenuControllerSwift/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/SourceMyPlace/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.test.myplace;
@@ -866,7 +866,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = QY7YNV42K5;
-				INFOPLIST_FILE = SlideMenuControllerSwift/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/SourceMyPlace/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
