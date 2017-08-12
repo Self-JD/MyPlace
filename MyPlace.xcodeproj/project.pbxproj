@@ -11,13 +11,10 @@
 		0E75C5A61BE3CAFE00844634 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E75C5A41BE3CAFE00844634 /* Info.plist */; };
 		0EB8EBFF1BE3CF3C00BC2A99 /* SlideMenuControllerSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E75C5A51BE3CAFE00844634 /* SlideMenuControllerSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		67DA93643A2623D46CECE02D /* Pods_MyPlaceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87644A74268B0448ED268266 /* Pods_MyPlaceTests.framework */; };
-		740AF2031F3EDFD20019F880 /* LeftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740AF1FA1F3EDFD20019F880 /* LeftViewController.swift */; };
-		740AF2041F3EDFD20019F880 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740AF1FB1F3EDFD20019F880 /* MainViewController.swift */; };
 		740AF2051F3EDFD20019F880 /* ExSlideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740AF1FC1F3EDFD20019F880 /* ExSlideMenuController.swift */; };
 		740AF2061F3EDFD20019F880 /* GoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740AF1FD1F3EDFD20019F880 /* GoViewController.swift */; };
 		740AF2071F3EDFD20019F880 /* JavaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740AF1FE1F3EDFD20019F880 /* JavaViewController.swift */; };
 		740AF2081F3EDFD20019F880 /* NonMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740AF1FF1F3EDFD20019F880 /* NonMenuController.swift */; };
-		740AF2091F3EDFD20019F880 /* RightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740AF2001F3EDFD20019F880 /* RightViewController.swift */; };
 		740AF20A1F3EDFD20019F880 /* SubContentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740AF2011F3EDFD20019F880 /* SubContentsViewController.swift */; };
 		740AF20B1F3EDFD20019F880 /* SwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740AF2021F3EDFD20019F880 /* SwiftViewController.swift */; };
 		740AF20E1F3EDFEA0019F880 /* SubContentsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 740AF20C1F3EDFEA0019F880 /* SubContentsViewController.storyboard */; };
@@ -35,6 +32,9 @@
 		74920FAC1F3F2E1D00B68127 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74920FA41F3F2E1D00B68127 /* UITableViewExtension.swift */; };
 		74920FAD1F3F2E1D00B68127 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74920FA51F3F2E1D00B68127 /* UIView.swift */; };
 		74920FAE1F3F2E1D00B68127 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74920FA61F3F2E1D00B68127 /* UIViewController.swift */; };
+		74920FBB1F3F7A2200B68127 /* LeftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74920FBA1F3F7A2200B68127 /* LeftViewController.swift */; };
+		74920FC11F3F7A4D00B68127 /* RightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74920FC01F3F7A4D00B68127 /* RightViewController.swift */; };
+		74920FC31F3F7B3300B68127 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74920FC21F3F7B3300B68127 /* MainViewController.swift */; };
 		C24D3B6CA5A37349DFDCEDC7 /* Pods_MyPlace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36E43DF557E398565236047A /* Pods_MyPlace.framework */; };
 		C539E6471A315E87003B7CC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C539E6461A315E87003B7CC7 /* AppDelegate.swift */; };
 		C539E64A1A315E87003B7CC7 /* SlideMenuControllerSwift.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C539E6481A315E87003B7CC7 /* SlideMenuControllerSwift.xcdatamodeld */; };
@@ -64,13 +64,10 @@
 		36E43DF557E398565236047A /* Pods_MyPlace.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyPlace.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		38293D2A0BE8FE894A6C5F43 /* Pods-MyPlace-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPlace-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyPlace-iOS/Pods-MyPlace-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		3DD1F192D29656FACB706675 /* Pods_MyPlace_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyPlace_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		740AF1FA1F3EDFD20019F880 /* LeftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LeftViewController.swift; path = ViewController/LeftViewController.swift; sourceTree = "<group>"; };
-		740AF1FB1F3EDFD20019F880 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = ViewController/MainViewController.swift; sourceTree = "<group>"; };
 		740AF1FC1F3EDFD20019F880 /* ExSlideMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExSlideMenuController.swift; path = ViewController/ExSlideMenuController.swift; sourceTree = "<group>"; };
 		740AF1FD1F3EDFD20019F880 /* GoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GoViewController.swift; path = ViewController/GoViewController.swift; sourceTree = "<group>"; };
 		740AF1FE1F3EDFD20019F880 /* JavaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JavaViewController.swift; path = ViewController/JavaViewController.swift; sourceTree = "<group>"; };
 		740AF1FF1F3EDFD20019F880 /* NonMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NonMenuController.swift; path = ViewController/NonMenuController.swift; sourceTree = "<group>"; };
-		740AF2001F3EDFD20019F880 /* RightViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RightViewController.swift; path = ViewController/RightViewController.swift; sourceTree = "<group>"; };
 		740AF2011F3EDFD20019F880 /* SubContentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubContentsViewController.swift; path = ViewController/SubContentsViewController.swift; sourceTree = "<group>"; };
 		740AF2021F3EDFD20019F880 /* SwiftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftViewController.swift; path = ViewController/SwiftViewController.swift; sourceTree = "<group>"; };
 		740AF20D1F3EDFEA0019F880 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SubContentsViewController.storyboard; sourceTree = "<group>"; };
@@ -89,6 +86,9 @@
 		74920FA41F3F2E1D00B68127 /* UITableViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UITableViewExtension.swift; path = Extension/UITableViewExtension.swift; sourceTree = "<group>"; };
 		74920FA51F3F2E1D00B68127 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIView.swift; path = Extension/UIView.swift; sourceTree = "<group>"; };
 		74920FA61F3F2E1D00B68127 /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewController.swift; path = Extension/UIViewController.swift; sourceTree = "<group>"; };
+		74920FBA1F3F7A2200B68127 /* LeftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LeftViewController.swift; path = ViewController/LeftVC/LeftViewController.swift; sourceTree = "<group>"; };
+		74920FC01F3F7A4D00B68127 /* RightViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RightViewController.swift; path = ViewController/RightVC/RightViewController.swift; sourceTree = "<group>"; };
+		74920FC21F3F7B3300B68127 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = ViewController/MainVC/MainViewController.swift; sourceTree = "<group>"; };
 		80711E7EAA1963DAF4787CE4 /* Pods-MyPlace-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPlace-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyPlace-iOS/Pods-MyPlace-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		87644A74268B0448ED268266 /* Pods_MyPlaceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyPlaceTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A181B6EE40302447349BDD9D /* Pods-MyPlace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPlace.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyPlace/Pods-MyPlace.debug.xcconfig"; sourceTree = "<group>"; };
@@ -164,6 +164,30 @@
 				FDF02BB40901CDB5EAB2D5BC /* Pods-MyPlaceTests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		74920FB91F3F7A1100B68127 /* LeftVC */ = {
+			isa = PBXGroup;
+			children = (
+				74920FBA1F3F7A2200B68127 /* LeftViewController.swift */,
+			);
+			name = LeftVC;
+			sourceTree = "<group>";
+		};
+		74920FBC1F3F7A2E00B68127 /* MainVC */ = {
+			isa = PBXGroup;
+			children = (
+				74920FC21F3F7B3300B68127 /* MainViewController.swift */,
+			);
+			name = MainVC;
+			sourceTree = "<group>";
+		};
+		74920FBF1F3F7A4300B68127 /* RightVC */ = {
+			isa = PBXGroup;
+			children = (
+				74920FC01F3F7A4D00B68127 /* RightViewController.swift */,
+			);
+			name = RightVC;
 			sourceTree = "<group>";
 		};
 		C539E6381A315E87003B7CC7 = {
@@ -270,13 +294,13 @@
 		C5C1CE631A70F7C400B6E411 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				740AF1FA1F3EDFD20019F880 /* LeftViewController.swift */,
-				740AF1FB1F3EDFD20019F880 /* MainViewController.swift */,
+				74920FBC1F3F7A2E00B68127 /* MainVC */,
+				74920FB91F3F7A1100B68127 /* LeftVC */,
+				74920FBF1F3F7A4300B68127 /* RightVC */,
 				740AF1FC1F3EDFD20019F880 /* ExSlideMenuController.swift */,
 				740AF1FD1F3EDFD20019F880 /* GoViewController.swift */,
 				740AF1FE1F3EDFD20019F880 /* JavaViewController.swift */,
 				740AF1FF1F3EDFD20019F880 /* NonMenuController.swift */,
-				740AF2001F3EDFD20019F880 /* RightViewController.swift */,
 				740AF2011F3EDFD20019F880 /* SubContentsViewController.swift */,
 				740AF2021F3EDFD20019F880 /* SwiftViewController.swift */,
 			);
@@ -604,20 +628,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				740AF2061F3EDFD20019F880 /* GoViewController.swift in Sources */,
+				74920FC31F3F7B3300B68127 /* MainViewController.swift in Sources */,
 				740AF2081F3EDFD20019F880 /* NonMenuController.swift in Sources */,
 				74920FAD1F3F2E1D00B68127 /* UIView.swift in Sources */,
 				740AF2111F3EE0400019F880 /* ImageHeaderView.swift in Sources */,
-				740AF2031F3EDFD20019F880 /* LeftViewController.swift in Sources */,
 				740AF2051F3EDFD20019F880 /* ExSlideMenuController.swift in Sources */,
 				74920FAE1F3F2E1D00B68127 /* UIViewController.swift in Sources */,
 				C539E64A1A315E87003B7CC7 /* SlideMenuControllerSwift.xcdatamodeld in Sources */,
 				74920FAC1F3F2E1D00B68127 /* UITableViewExtension.swift in Sources */,
 				740AF20B1F3EDFD20019F880 /* SwiftViewController.swift in Sources */,
-				740AF2091F3EDFD20019F880 /* RightViewController.swift in Sources */,
-				740AF2041F3EDFD20019F880 /* MainViewController.swift in Sources */,
 				C539E6471A315E87003B7CC7 /* AppDelegate.swift in Sources */,
 				740AF2161F3EE0900019F880 /* BaseTableViewCell.swift in Sources */,
 				74920FA81F3F2E1D00B68127 /* UIApplication.swift in Sources */,
+				74920FC11F3F7A4D00B68127 /* RightViewController.swift in Sources */,
+				74920FBB1F3F7A2200B68127 /* LeftViewController.swift in Sources */,
 				C5BA8AA61A43E2EF00863FB9 /* SlideMenuController.swift in Sources */,
 				74920FA91F3F2E1D00B68127 /* UIColor.swift in Sources */,
 				740AF2071F3EDFD20019F880 /* JavaViewController.swift in Sources */,
