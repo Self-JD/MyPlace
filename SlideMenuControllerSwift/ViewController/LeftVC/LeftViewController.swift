@@ -8,9 +8,9 @@
 import UIKit
 
 enum LeftMenu: Int {
-    case main = 0
-    case swift
-    case java
+    case home = 0
+    case managePlace
+    case setAlert
     case go
     case nonMenu
     case signOut
@@ -23,7 +23,7 @@ protocol LeftMenuProtocol : class {
 class LeftViewController : UIViewController, LeftMenuProtocol, GIDSignInUIDelegate, MyGoogleObjDelegate {
     
     @IBOutlet weak var tableView: UITableView!
-    var menus = ["Main", "Swift", "Java", "Go", "NonMenu"]
+    var menus = ["Home", "Manage Places", "Set Alert", "Go", "NonMenu"]
     var mainViewController: UIViewController!
     var swiftViewController: UIViewController!
     var javaViewController: UIViewController!
@@ -87,8 +87,7 @@ class LeftViewController : UIViewController, LeftMenuProtocol, GIDSignInUIDelega
         let lastName = user?.profile.familyName
         self.imageHeaderView.nameLable.text = firstName!+" "+lastName!
         self.imageHeaderView.emailLable.text = user?.profile.email
-        
-        menus = ["Main", "Swift", "Java", "Go", "NonMenu", "Sign Out"]
+        menus.append("Sign Out")
         self.tableView.reloadData()
     }
     
@@ -104,11 +103,11 @@ class LeftViewController : UIViewController, LeftMenuProtocol, GIDSignInUIDelega
     
     func changeViewController(_ menu: LeftMenu) {
         switch menu {
-        case .main:
+        case .home:
             self.slideMenuController()?.changeMainViewController(self.mainViewController, close: true)
-        case .swift:
+        case .managePlace:
             self.slideMenuController()?.changeMainViewController(self.swiftViewController, close: true)
-        case .java:
+        case .setAlert:
             self.slideMenuController()?.changeMainViewController(self.javaViewController, close: true)
         case .go:
             self.slideMenuController()?.changeMainViewController(self.goViewController, close: true)
@@ -127,7 +126,7 @@ class LeftViewController : UIViewController, LeftMenuProtocol, GIDSignInUIDelega
         self.imageHeaderView.profileImage.isHidden = true
         self.imageHeaderView.nameLable.isHidden = true
         self.imageHeaderView.emailLable.isHidden = true
-        menus = ["Main", "Swift", "Java", "Go", "NonMenu"]
+        menus.removeLast()
         self.tableView.reloadData()
     }
 }
@@ -136,7 +135,7 @@ extension LeftViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if let menu = LeftMenu(rawValue: indexPath.row) {
             switch menu {
-            case .main, .swift, .java, .go, .nonMenu, .signOut:
+            case .home, .managePlace, .setAlert, .go, .nonMenu, .signOut:
                 return BaseTableViewCell.height()
             }
         }
@@ -166,7 +165,7 @@ extension LeftViewController : UITableViewDataSource {
         
         if let menu = LeftMenu(rawValue: indexPath.row) {
             switch menu {
-            case .main, .swift, .java, .go, .nonMenu, .signOut:
+            case .home, .managePlace, .setAlert, .go, .nonMenu, .signOut:
                 let cell = BaseTableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: BaseTableViewCell.identifier)
                 cell.setData(menus[indexPath.row])
                 return cell
