@@ -9,17 +9,20 @@ import UIKit
 import CoreData
 import GoogleMaps
 import GooglePlaces
+import CoreLocation
 
 
 @objc protocol MyGoogleObjDelegate{
     @objc optional func signInFinished()
 }
+internal let kMapsAPIKey = "AIzaSyCzJuvi7YSouIUDenzXVlfK2a_SSuDhQWc"
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate,GIDSignInDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate{
     
     var window: UIWindow?
     var delegate : MyGoogleObjDelegate?
+   
     
     fileprivate func createMenuView() {
         
@@ -58,9 +61,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate,GIDSignInDelegate {
         return GIDSignIn.sharedInstance().handle(url, sourceApplication: sourceApplication, annotation: annotation)
     }
     
+    func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
+        GMSPlacesClient.provideAPIKey(kMapsAPIKey)
+        GMSServices.provideAPIKey(kMapsAPIKey)
+        return true
+    }
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         self.createMenuView()
+        
         
         var configureError:NSError?
         GGLContext.sharedInstance().configureWithError(&configureError)
@@ -69,8 +79,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,GIDSignInDelegate {
         }
         GIDSignIn.sharedInstance().delegate = self
         
-        GMSServices.provideAPIKey("AIzaSyCzJuvi7YSouIUDenzXVlfK2a_SSuDhQWc")
-        GMSPlacesClient.provideAPIKey("AIzaSyCzJuvi7YSouIUDenzXVlfK2a_SSuDhQWc")
+        
         
         return true
     }
@@ -171,6 +180,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate,GIDSignInDelegate {
             }
         }
     }
-    
 }
 

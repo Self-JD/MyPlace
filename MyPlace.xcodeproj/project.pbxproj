@@ -11,6 +11,7 @@
 		0E75C5A61BE3CAFE00844634 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E75C5A41BE3CAFE00844634 /* Info.plist */; };
 		0EB8EBFF1BE3CF3C00BC2A99 /* SlideMenuControllerSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E75C5A51BE3CAFE00844634 /* SlideMenuControllerSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		67DA93643A2623D46CECE02D /* Pods_MyPlaceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87644A74268B0448ED268266 /* Pods_MyPlaceTests.framework */; };
+		740111C21F40DB6700707752 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 740111C11F40DB6700707752 /* CoreLocation.framework */; };
 		740AF2051F3EDFD20019F880 /* ExSlideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740AF1FC1F3EDFD20019F880 /* ExSlideMenuController.swift */; };
 		740AF2061F3EDFD20019F880 /* GoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740AF1FD1F3EDFD20019F880 /* GoViewController.swift */; };
 		740AF2071F3EDFD20019F880 /* JavaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740AF1FE1F3EDFD20019F880 /* JavaViewController.swift */; };
@@ -64,6 +65,7 @@
 		36E43DF557E398565236047A /* Pods_MyPlace.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyPlace.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		38293D2A0BE8FE894A6C5F43 /* Pods-MyPlace-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPlace-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyPlace-iOS/Pods-MyPlace-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		3DD1F192D29656FACB706675 /* Pods_MyPlace_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyPlace_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		740111C11F40DB6700707752 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		740AF1FC1F3EDFD20019F880 /* ExSlideMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExSlideMenuController.swift; path = ViewController/ExSlideMenuController.swift; sourceTree = "<group>"; };
 		740AF1FD1F3EDFD20019F880 /* GoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GoViewController.swift; path = ViewController/GoViewController.swift; sourceTree = "<group>"; };
 		740AF1FE1F3EDFD20019F880 /* JavaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JavaViewController.swift; path = ViewController/JavaViewController.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				740111C21F40DB6700707752 /* CoreLocation.framework in Frameworks */,
 				C24D3B6CA5A37349DFDCEDC7 /* Pods_MyPlace.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -146,6 +149,7 @@
 		2043BBED0B62E367369A8310 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				740111C11F40DB6700707752 /* CoreLocation.framework */,
 				36E43DF557E398565236047A /* Pods_MyPlace.framework */,
 				3DD1F192D29656FACB706675 /* Pods_MyPlace_iOS.framework */,
 				87644A74268B0448ED268266 /* Pods_MyPlaceTests.framework */,
@@ -542,6 +546,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-MyPlace/Pods-MyPlace-resources.sh",
 				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlacePicker/Frameworks/GooglePlacePicker.framework/Resources/GooglePlacePicker.bundle",
 				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
 				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 			);
@@ -789,7 +794,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -830,7 +835,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -848,7 +853,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = QY7YNV42K5;
 				INFOPLIST_FILE = "$(SRCROOT)/SourceMyPlace/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.test.myplace;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -867,7 +872,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = QY7YNV42K5;
 				INFOPLIST_FILE = "$(SRCROOT)/SourceMyPlace/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.test.myplace;
