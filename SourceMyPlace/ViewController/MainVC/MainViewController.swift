@@ -13,7 +13,7 @@ import GooglePlacePicker
 class MainViewController: UIViewController, UISearchDisplayDelegate, GMSMapViewDelegate, CLLocationManagerDelegate{
     
     //LocationManager
-//    var locationManager = CLLocationManager()
+
     
     //Google Place
     var resultsViewController: GMSAutocompleteResultsViewController?
@@ -39,19 +39,12 @@ class MainViewController: UIViewController, UISearchDisplayDelegate, GMSMapViewD
                                               longitude: 151.2086,
                                               zoom: 4)
         mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
-        
         mapView.settings.compassButton = true
         mapView.settings.myLocationButton = true
+
         mapView.isMyLocationEnabled = true
         mapView.delegate = self;
         view = mapView
-        
-        // Creates a marker in the center of the map.
-//        let marker = GMSMarker()
-//        marker.position = CLLocationCoordinate2D(latitude: -33.86, longitude: 151.20)
-//        marker.title = "Sydney"
-//        marker.snippet = "Australia"
-//        marker.map = mapView
     }
     
 
@@ -61,6 +54,7 @@ class MainViewController: UIViewController, UISearchDisplayDelegate, GMSMapViewD
         //self.tableView.registerCellNib(DataTableViewCell.self)
     
         //Intialize Location Code
+        
         initLocationManager()
         
         //PLace API for search place 
@@ -100,17 +94,66 @@ class MainViewController: UIViewController, UISearchDisplayDelegate, GMSMapViewD
     }
 
     //MARK Delegate MAP
+
+    
+
     func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
-        print("You tapped at \(coordinate.latitude), \(coordinate.longitude)")
+        
+        if(self.navigationController?.isNavigationBarHidden == false){
+            self.navigationController?.setNavigationBarHidden(true, animated: true)
+        }
+        else{
+            self.navigationController?.setNavigationBarHidden(false, animated: true)
+        }
     }
+    
+    func mapView(_ mapView: GMSMapView, didLongPressAt coordinate: CLLocationCoordinate2D) {
+        print("You tapped at \(coordinate.latitude), \(coordinate.longitude)")
+        mapView.clear()
+        let marker = GMSMarker()
+        marker.position = CLLocationCoordinate2D(latitude: coordinate.latitude, longitude: coordinate.longitude)
+        marker.title = "\("Test Name")"
+        marker.snippet = "\(String(describing: "Test Address"))"
+        marker.map = mapView
+    }
+ 
     func didTapMyLocationButton(for mapView: GMSMapView) -> Bool {
-        locationManager.startUpdatingLocation()
+        let status = CLLocationManager.authorizationStatus()
+            switch status {
+            case .notDetermined:
+                 locationManager.requestAlwaysAuthorization()
+            case .restricted, .denied:
+                print("No access")
+                
+                callLocationAlerview()
+            case .authorizedAlways, .authorizedWhenInUse:
+                print("Access")
+                locationFixAchieved = false
+                locationManager.stopUpdatingLocation()
+                locationManager.startUpdatingLocation()
+            }
+
+//        let alertController = UIAlertController(title: "Destructive", message: "Simple alertView demo with Destructive and Ok.", preferredStyle: UIAlertControllerStyle.alert) //Replace UIAlertControllerStyle.Alert by UIAlertControllerStyle.alert
+//        let DestructiveAction = UIAlertAction(title: "Destructive", style: UIAlertActionStyle.destructive) {
+//            (result : UIAlertAction) -> Void in
+//            print("Destructive")
+//        }
+//        
+//        // Replace UIAlertActionStyle.Default by UIAlertActionStyle.default
+//        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {
+//            (result : UIAlertAction) -> Void in
+//            print("OK")
+//        }
+//        
+//        alertController.addAction(DestructiveAction)
+//        alertController.addAction(okAction)
+//        self.present(alertController, animated: true, completion: nil)
         return true
     }
     
     
     
-    //Location Delegate
+//MARK Location Delegate
     
     // Location Manager helper stuff
     func initLocationManager() {
@@ -126,20 +169,15 @@ class MainViewController: UIViewController, UISearchDisplayDelegate, GMSMapViewD
     
     // Location Manager Delegate stuff
     // If failed
-    func locationManager(_ manager: CLLocationManager, monitoringDidFailFor region: CLRegion?, withError error: Error) {
-        
-    }
+
+    
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        locationManager.stopUpdatingLocation()
-        
-        if (seenError == false) {
-            seenError = true
-            print(error)
-        }
+        print(error)
         
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
         if (locationFixAchieved == false) {
             locationFixAchieved = true
             let locationArray = locations as NSArray
@@ -147,11 +185,6 @@ class MainViewController: UIViewController, UISearchDisplayDelegate, GMSMapViewD
             let coord = locationObj.coordinate
             
             cameraMoveToLocation(toLocation: coord)
-            
-           
-
-            
-            
             
         }
     }
@@ -163,31 +196,54 @@ class MainViewController: UIViewController, UISearchDisplayDelegate, GMSMapViewD
         switch status {
         case CLAuthorizationStatus.restricted:
             locationStatus = "Restricted Access to location"
+            break
         case CLAuthorizationStatus.denied:
             locationStatus = "User denied access to location"
+            mapView.isMyLocationEnabled = false
+            break
         case CLAuthorizationStatus.notDetermined:
             locationStatus = "Status not determined"
+            manager.requestAlwaysAuthorization()
         default:
             locationStatus = "Allowed to location Access"
+            mapView.isMyLocationEnabled = true
             shouldIAllow = true
         }
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "LabelHasbeenUpdated"), object: nil)
         if (shouldIAllow == true) {
-            NSLog("Location to Allowed")
+            print("Location to Allowed")
             // Start location services
             locationManager.startUpdatingLocation()
         } else {
             NSLog("Denied access: \(locationStatus)")
         }
     }
+    
     func cameraMoveToLocation(toLocation: CLLocationCoordinate2D?) {
         if toLocation != nil {
-            mapView.camera = GMSCameraPosition.camera(withTarget: toLocation!, zoom: 15)
+            //mapView.camera = GMSCameraPosition.camera(withTarget: toLocation!, zoom: 15)
             
+            let vancouver = CLLocationCoordinate2D(latitude:(toLocation?.latitude)!, longitude: (toLocation?.longitude)!)
+            let vancouverCam = GMSCameraUpdate.setTarget(vancouver)
+            mapView.animate(with: vancouverCam)
+            
+            mapView.animate(toZoom: 15)
             
         }
     }
+    
+    //Utils Functions
+    func callLocationAlerview() {
+        let alert = UIAlertController(title: "Your title", message: "GPS access is restricted. In order to use tracking, please enable GPS in the Settigs app under Privacy, Location Services.", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Go to Settings now", style: UIAlertActionStyle.default, handler: { (alert: UIAlertAction!) in
+            print("GPS")
+            UIApplication.shared.openURL(NSURL(string:UIApplicationOpenSettingsURLString)! as URL)
+        }))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
 }
+
 
 
 extension MainViewController : SlideMenuControllerDelegate {
