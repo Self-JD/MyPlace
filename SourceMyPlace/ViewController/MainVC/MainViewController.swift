@@ -41,7 +41,7 @@ class MainViewController: UIViewController, UISearchDisplayDelegate, GMSMapViewD
         mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
         mapView.settings.compassButton = true
         mapView.settings.myLocationButton = true
-
+        mapView.mapType = .normal
         mapView.isMyLocationEnabled = true
         mapView.delegate = self;
         view = mapView
@@ -87,16 +87,46 @@ class MainViewController: UIViewController, UISearchDisplayDelegate, GMSMapViewD
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.setNavigationBarItem()
+        
+        let button = UIButton(frame: CGRect(x: 100, y: 100, width: 44, height: 44))
+        button.backgroundColor = UIColor.gray
+        button.addTarget(self, action: #selector(changeMapType), for: .touchUpInside)
+        self.view.addSubview(button)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
 
-    //MARK Delegate MAP
-
     
-
+    @IBAction func changeMapType(sender: AnyObject) {
+        let actionSheet = UIAlertController(title: "Map Types", message: "Select map type:", preferredStyle: UIAlertControllerStyle.actionSheet)
+        
+        let normalMapTypeAction = UIAlertAction(title: "Normal", style: UIAlertActionStyle.default) { (alertAction) -> Void in
+            self.mapView.mapType = .normal
+        }
+        
+        let terrainMapTypeAction = UIAlertAction(title: "Terrain", style: UIAlertActionStyle.default) { (alertAction) -> Void in
+            self.mapView.mapType = .terrain
+        }
+        
+        let hybridMapTypeAction = UIAlertAction(title: "Hybrid", style: UIAlertActionStyle.default) { (alertAction) -> Void in
+            self.mapView.mapType = .hybrid
+        }
+        
+        let cancelAction = UIAlertAction(title: "Close", style: UIAlertActionStyle.cancel) { (alertAction) -> Void in
+            
+        }
+        
+        actionSheet.addAction(normalMapTypeAction)
+        actionSheet.addAction(terrainMapTypeAction)
+        actionSheet.addAction(hybridMapTypeAction)
+        actionSheet.addAction(cancelAction)
+        
+        present(actionSheet, animated: true, completion: nil)
+    }
+    
+    //MARK Delegate MAP
     func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
         
         if(self.navigationController?.isNavigationBarHidden == false){
@@ -116,6 +146,16 @@ class MainViewController: UIViewController, UISearchDisplayDelegate, GMSMapViewD
         marker.snippet = "\(String(describing: "Test Address"))"
         marker.map = mapView
     }
+    
+    @objc(mapView:didTapPOIWithPlaceID:name:location:) func mapView(_ mapView: GMSMapView, didTapPOIWithPlaceID placeID: String, name: String, location: CLLocationCoordinate2D) {
+        mapView.clear()
+        let marker = GMSMarker()
+        marker.position = CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)
+        marker.title = "\(name)"
+        marker.snippet = "\(placeID)"
+        marker.map = mapView
+
+    }
  
     func didTapMyLocationButton(for mapView: GMSMapView) -> Bool {
         let status = CLLocationManager.authorizationStatus()
@@ -132,22 +172,6 @@ class MainViewController: UIViewController, UISearchDisplayDelegate, GMSMapViewD
                 locationManager.stopUpdatingLocation()
                 locationManager.startUpdatingLocation()
             }
-
-//        let alertController = UIAlertController(title: "Destructive", message: "Simple alertView demo with Destructive and Ok.", preferredStyle: UIAlertControllerStyle.alert) //Replace UIAlertControllerStyle.Alert by UIAlertControllerStyle.alert
-//        let DestructiveAction = UIAlertAction(title: "Destructive", style: UIAlertActionStyle.destructive) {
-//            (result : UIAlertAction) -> Void in
-//            print("Destructive")
-//        }
-//        
-//        // Replace UIAlertActionStyle.Default by UIAlertActionStyle.default
-//        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {
-//            (result : UIAlertAction) -> Void in
-//            print("OK")
-//        }
-//        
-//        alertController.addAction(DestructiveAction)
-//        alertController.addAction(okAction)
-//        self.present(alertController, animated: true, completion: nil)
         return true
     }
     
@@ -184,7 +208,7 @@ class MainViewController: UIViewController, UISearchDisplayDelegate, GMSMapViewD
             let locationObj = locationArray.lastObject as! CLLocation
             let coord = locationObj.coordinate
             
-            cameraMoveToLocation(toLocation: coord)
+            cameraMoveToLocation(toLocation: coord, zoomPoint: 15)
             
         }
     }
@@ -219,7 +243,7 @@ class MainViewController: UIViewController, UISearchDisplayDelegate, GMSMapViewD
         }
     }
     
-    func cameraMoveToLocation(toLocation: CLLocationCoordinate2D?) {
+    func cameraMoveToLocation(toLocation: CLLocationCoordinate2D?, zoomPoint : Float) {
         if toLocation != nil {
             //mapView.camera = GMSCameraPosition.camera(withTarget: toLocation!, zoom: 15)
             
@@ -227,19 +251,22 @@ class MainViewController: UIViewController, UISearchDisplayDelegate, GMSMapViewD
             let vancouverCam = GMSCameraUpdate.setTarget(vancouver)
             mapView.animate(with: vancouverCam)
             
-            mapView.animate(toZoom: 15)
+            mapView.animate(toZoom: zoomPoint)
             
         }
     }
     
     //Utils Functions
     func callLocationAlerview() {
-        let alert = UIAlertController(title: "Your title", message: "GPS access is restricted. In order to use tracking, please enable GPS in the Settigs app under Privacy, Location Services.", preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "Go to Settings now", style: UIAlertActionStyle.default, handler: { (alert: UIAlertAction!) in
+        let alert = UIAlertController(title: "Turn On Location Service to Allow \"MyPLace\" to Determine Your Location", message: "We use your current location to provide more accurate information about your buddies.", preferredStyle: UIAlertControllerStyle.alert)
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: { (alert: UIAlertAction!) in
+            print("Cancel")
+        }))
+        alert.addAction(UIAlertAction(title: "Go to Settings", style: UIAlertActionStyle.default, handler: { (alert: UIAlertAction!) in
             print("GPS")
             UIApplication.shared.openURL(NSURL(string:UIApplicationOpenSettingsURLString)! as URL)
         }))
-        
         self.present(alert, animated: true, completion: nil)
     }
 }
@@ -288,15 +315,33 @@ extension MainViewController: GMSAutocompleteResultsViewControllerDelegate {
                            didAutocompleteWith place: GMSPlace) {
         searchController?.isActive = false
         // Do something with the selected place.
-        print("Place name: \(place.name)")
+        print("Place name: \(place.placeID)")
         print("Place address: \(String(describing: place.formattedAddress))")
         print("Place attributions: \(String(describing: place.attributions))")
-        
+        mapView.clear()
         let marker = GMSMarker()
         marker.position = CLLocationCoordinate2D(latitude: place.coordinate.latitude, longitude: place.coordinate.longitude)
         marker.title = "\(place.name)"
         marker.snippet = "\(String(describing: place.formattedAddress))"
         marker.map = mapView
+        var zoomPoint:Float!
+        let typesArray = place.types as NSArray
+        let locationObj = typesArray.firstObject as! String
+        
+        switch locationObj {
+        case "restaurant":
+            zoomPoint = 15
+        case "country":
+            zoomPoint = 4
+        case "premise":
+            zoomPoint = 19
+        default:
+            zoomPoint = 10
+            
+        }
+        
+        cameraMoveToLocation(toLocation: place.coordinate, zoomPoint: zoomPoint)
+
     }
     
     func resultsController(_ resultsController: GMSAutocompleteResultsViewController,
