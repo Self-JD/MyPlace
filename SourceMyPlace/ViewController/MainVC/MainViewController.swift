@@ -10,7 +10,7 @@ import GoogleMaps
 import GooglePlaces
 import GooglePlacePicker
 
-class MainViewController: UIViewController, UISearchDisplayDelegate, GMSMapViewDelegate, CLLocationManagerDelegate{
+class MainViewController: UIViewController, UISearchDisplayDelegate, GMSMapViewDelegate, CLLocationManagerDelegate, UISearchControllerDelegate, UISearchBarDelegate{
     
     //LocationManager
 
@@ -44,7 +44,7 @@ class MainViewController: UIViewController, UISearchDisplayDelegate, GMSMapViewD
         mapView.mapType = .normal
         mapView.isMyLocationEnabled = true
         mapView.delegate = self;
-        view = mapView
+        self.view = mapView
     }
     
 
@@ -65,6 +65,9 @@ class MainViewController: UIViewController, UISearchDisplayDelegate, GMSMapViewD
         
         searchController = UISearchController(searchResultsController: resultsViewController)
         searchController?.searchResultsUpdater = resultsViewController
+        searchController?.searchBar.sizeToFit()
+        searchController?.delegate = self
+        searchController?.searchBar.delegate = self
         
         // Put the search bar in the navigation bar.
         searchController?.searchBar.sizeToFit()
@@ -77,7 +80,6 @@ class MainViewController: UIViewController, UISearchDisplayDelegate, GMSMapViewD
         // Prevent the navigation bar from being hidden when searching.
         searchController?.hidesNavigationBarDuringPresentation = false
         
-       
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -88,10 +90,11 @@ class MainViewController: UIViewController, UISearchDisplayDelegate, GMSMapViewD
         super.viewWillAppear(animated)
         self.setNavigationBarItem()
         
-        let button = UIButton(frame: CGRect(x: 100, y: 100, width: 44, height: 44))
-        button.backgroundColor = UIColor.gray
-        button.addTarget(self, action: #selector(changeMapType), for: .touchUpInside)
-        self.view.addSubview(button)
+        let btnMapType = UIButton(frame: CGRect(x: self.view.frame.size.width-64, y: 70, width: 36, height: 36))
+        btnMapType.backgroundColor = UIColor.gray
+        btnMapType.contentHorizontalAlignment = .right
+        btnMapType.addTarget(self, action: #selector(changeMapType), for: .touchUpInside)
+        self.view.addSubview(btnMapType)
     }
 
     override func didReceiveMemoryWarning() {
@@ -126,7 +129,7 @@ class MainViewController: UIViewController, UISearchDisplayDelegate, GMSMapViewD
         present(actionSheet, animated: true, completion: nil)
     }
     
-    //MARK Delegate MAP
+    //MARK: GOOGLE MAP Delegate
     func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
         
         if(self.navigationController?.isNavigationBarHidden == false){
@@ -151,6 +154,7 @@ class MainViewController: UIViewController, UISearchDisplayDelegate, GMSMapViewD
         mapView.clear()
         let marker = GMSMarker()
         marker.position = CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)
+        searchController?.searchBar.text = name
         marker.title = "\(name)"
         marker.snippet = "\(placeID)"
         marker.map = mapView
@@ -176,9 +180,6 @@ class MainViewController: UIViewController, UISearchDisplayDelegate, GMSMapViewD
     }
     
     
-    
-//MARK Location Delegate
-    
     // Location Manager helper stuff
     func initLocationManager() {
         seenError = false
@@ -191,10 +192,7 @@ class MainViewController: UIViewController, UISearchDisplayDelegate, GMSMapViewD
         
     }
     
-    // Location Manager Delegate stuff
-    // If failed
-
-    
+    // MARK:Location Manager Delegate stuff
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print(error)
         
@@ -256,6 +254,53 @@ class MainViewController: UIViewController, UISearchDisplayDelegate, GMSMapViewD
         }
     }
     
+    
+    // MARK:UISearchDisplayController Delegate
+    
+    func willPresentSearchController(_ searchController: UISearchController) {
+        print("willPresentSearchController")
+        //searchController.searchBar.showsCancelButton = false
+    }
+    func didPresentSearchController(_ searchController: UISearchController) {
+        print("didPresentSearchController")
+        //searchController.searchBar.showsCancelButton = false
+        
+    }
+    func willDismissSearchController(_ searchController: UISearchController) {
+        print("willDismissSearchController")
+    }
+    
+    func didDismissSearchController(_ searchController: UISearchController) {
+        
+        print("didDismissSearchController")
+    }
+    
+    // MARK: SearchBar Delegate
+    
+    var isSearchBarShouldBeginEditing = true
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        mapView.clear()
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        isSearchBarShouldBeginEditing = true
+        if(searchText.characters.count == 0){
+            mapView.clear()
+            isSearchBarShouldBeginEditing = false
+        }
+    }
+    
+    func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
+        if(isSearchBarShouldBeginEditing){
+            return true
+        }else{
+            return false
+        }
+    }
+    
+  
+
     //Utils Functions
     func callLocationAlerview() {
         let alert = UIAlertController(title: "Turn On Location Service to Allow \"MyPLace\" to Determine Your Location", message: "We use your current location to provide more accurate information about your buddies.", preferredStyle: UIAlertControllerStyle.alert)
@@ -309,13 +354,16 @@ extension MainViewController : SlideMenuControllerDelegate {
 }
 
 
+
 // Handle the user's selection.
 extension MainViewController: GMSAutocompleteResultsViewControllerDelegate {
     func resultsController(_ resultsController: GMSAutocompleteResultsViewController,
                            didAutocompleteWith place: GMSPlace) {
         searchController?.isActive = false
+        searchController?.searchBar.text = place.name
         // Do something with the selected place.
-        print("Place name: \(place.placeID)")
+        
+        print("Place name: \(place.name)")
         print("Place address: \(String(describing: place.formattedAddress))")
         print("Place attributions: \(String(describing: place.attributions))")
         mapView.clear()
