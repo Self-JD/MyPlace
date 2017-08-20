@@ -13,7 +13,10 @@ import GooglePlacePicker
 class MainViewController: UIViewController, UISearchDisplayDelegate, GMSMapViewDelegate, CLLocationManagerDelegate, UISearchControllerDelegate, UISearchBarDelegate{
     
     //LocationManager
-
+    
+    // Menu Button
+ 
+    
     
     //Google Place
     var resultsViewController: GMSAutocompleteResultsViewController?
@@ -90,11 +93,86 @@ class MainViewController: UIViewController, UISearchDisplayDelegate, GMSMapViewD
         super.viewWillAppear(animated)
         self.setNavigationBarItem()
         
-        let btnMapType = UIButton(frame: CGRect(x: self.view.frame.size.width-64, y: 70, width: 36, height: 36))
-        btnMapType.backgroundColor = UIColor.gray
-        btnMapType.contentHorizontalAlignment = .right
-        btnMapType.addTarget(self, action: #selector(changeMapType), for: .touchUpInside)
-        self.view.addSubview(btnMapType)
+//        let btnMapType = UIButton(frame: CGRect(x: self.view.frame.size.width-64, y: 70, width: 36, height: 36))
+//        btnMapType.backgroundColor = UIColor.gray
+//        btnMapType.contentHorizontalAlignment = .right
+//        btnMapType.addTarget(self, action: #selector(changeMapType), for: .touchUpInside)
+//        self.view.addSubview(btnMapType)
+//        
+//        
+        
+        // Menu Button
+ 
+        let menuButtonsMapType = LGPlusButtonsView(numberOfButtons: 4, firstButtonIsPlusButton: true, showAfterInit: true, actionHandler: { (menuButtonsMapType, title, description, index) in
+        print("Location")
+            if(index == 1){
+                self.mapView.mapType = .normal
+            }else if(index == 2)
+            {
+                self.mapView.mapType = .terrain
+            }else{
+                self.mapView.mapType = .hybrid
+            }
+        })
+            
+        //menuButtonsMapType?.observedScrollView = self.mapView;
+        menuButtonsMapType?.coverColor = UIColor(white: 1.0, alpha: 0.7)
+        menuButtonsMapType?.position = .topRight
+        
+        menuButtonsMapType?.plusButtonAnimationType = .none
+        menuButtonsMapType?.setButtonsTitles(["", "", "", ""], for: .normal)
+        
+        menuButtonsMapType?.setDescriptionsTexts(["", "Normal", "Terrain", "Hybrid"])
+        
+        menuButtonsMapType?.setButtonsImages([UIImage(named: "Camera")!, UIImage(named: "Camera")!, UIImage(named: "Picture")!, UIImage(named: "Message")!], for: .normal, for: .all)
+        
+        
+        
+        menuButtonsMapType?.setButtonsAdjustsImageWhenHighlighted(false)
+        
+        
+        menuButtonsMapType?.setButtonsBackgroundColor(UIColor(red: 0.0, green: 0.5, blue: 1.0, alpha: 1.0), for: .normal)
+        menuButtonsMapType?.setButtonsBackgroundColor(UIColor(red: 0.2, green: 0.6, blue: 1.0, alpha: 1.0), for: .highlighted)
+        menuButtonsMapType?.setButtonsBackgroundColor(UIColor(red: 0.2, green: 0.6, blue: 1.0, alpha: 1.0), for: [.highlighted, .selected])
+        menuButtonsMapType?.setButtonsSize(CGSize(width: 38.0, height: 38.0), for: .all)
+        menuButtonsMapType?.setButtonsLayerCornerRadius(38.0 / 2.0, for: .all)
+        menuButtonsMapType?.setButtonsTitleFont(UIFont.boldSystemFont(ofSize: 24.0), for: .all)
+        menuButtonsMapType?.setButtonsLayerShadowColor(UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1.0))
+        
+        menuButtonsMapType?.setButtonsLayerShadowOpacity(0.5)
+        menuButtonsMapType?.setButtonsLayerShadowRadius(3.0)
+        menuButtonsMapType?.setButtonsLayerShadowOffset(CGSize(width: 0.0, height: 2.0))
+
+        menuButtonsMapType?.setButtonAt(0, size: CGSize(width: 56.0, height: 56.0), for: (UI_USER_INTERFACE_IDIOM() == .phone ? .portrait : .all))
+        menuButtonsMapType?.setButtonAt(0, layerCornerRadius: 56.0 / 2.0, for: (UI_USER_INTERFACE_IDIOM() == .phone ? .portrait : .all))
+        
+        menuButtonsMapType?.setButtonAt(0, titleFont: UIFont.systemFont(ofSize: 40.0), for: (UI_USER_INTERFACE_IDIOM() == .phone ? .portrait : .all))
+        menuButtonsMapType?.setButtonAt(0, titleOffset: CGPoint(x: 0.0, y: -3.0), for: .all)
+        menuButtonsMapType?.setButtonAt(1, backgroundColor: UIColor(red: 1.0, green: 0.0, blue: 0.5, alpha: 1.0), for: .normal)
+        menuButtonsMapType?.setButtonAt(1, backgroundColor: UIColor(red: 1.0, green: 0.2, blue: 0.6, alpha: 1.0), for: .highlighted)
+        menuButtonsMapType?.setButtonAt(2, backgroundColor: UIColor(red: 1.0, green: 0.5, blue: 0.0, alpha: 1.0), for: .normal)
+        menuButtonsMapType?.setButtonAt(2, backgroundColor: UIColor(red: 1.0, green: 0.6, blue: 0.2, alpha: 1.0), for: .highlighted)
+        menuButtonsMapType?.setButtonAt(3, backgroundColor: UIColor(red: 0.0, green: 0.7, blue: 0.0, alpha: 1.0), for: .normal)
+        menuButtonsMapType?.setButtonAt(3, backgroundColor: UIColor(red: 0.0, green: 0.8, blue: 0.0, alpha: 1.0), for: .highlighted)
+        menuButtonsMapType?.setDescriptionsBackgroundColor(UIColor.white)
+        menuButtonsMapType?.setDescriptionsTextColor(UIColor.black)
+        menuButtonsMapType?.setDescriptionsLayerShadowColor (UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1.0))
+        menuButtonsMapType?.setDescriptionsLayerShadowOpacity (0.25)
+        menuButtonsMapType?.setDescriptionsLayerShadowRadius (1.0)
+        menuButtonsMapType?.setDescriptionsLayerShadowOffset(CGSize(width: 0.0, height: 1.0))
+        
+        menuButtonsMapType?.setDescriptionsLayerCornerRadius(6.0, for: .all)
+        menuButtonsMapType?.setDescriptionsContentEdgeInsets(UIEdgeInsetsMake(4.0, 8.0, 4.0, 8.0), for: .all)
+        for i in 1...3 {
+            menuButtonsMapType?.setButtonAt(UInt(i), offset: CGPoint(x: -6.0, y: 0.0), for: (UI_USER_INTERFACE_IDIOM() == .phone ? .portrait : .all))
+        }
+        if UI_USER_INTERFACE_IDIOM() == .phone {
+            menuButtonsMapType?.setButtonAt(0, titleOffset: CGPoint(x: 0.0, y: -2.0), for: .landscape)
+            menuButtonsMapType?.setButtonAt(0, titleFont: UIFont.systemFont(ofSize: 32.0), for: .landscape
+            )
+        }
+        navigationController?.view?.addSubview(menuButtonsMapType!)
+        //self.view.addSubview(menuButtonsMapType!)
     }
 
     override func didReceiveMemoryWarning() {

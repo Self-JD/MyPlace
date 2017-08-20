@@ -24,6 +24,10 @@
 		740AF2161F3EE0900019F880 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740AF2131F3EE0900019F880 /* BaseTableViewCell.swift */; };
 		740AF2171F3EE0900019F880 /* DataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740AF2141F3EE0900019F880 /* DataTableViewCell.swift */; };
 		740AF2181F3EE0900019F880 /* DataTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 740AF2151F3EE0900019F880 /* DataTableViewCell.xib */; };
+		741DEF721F49C98300516A93 /* LGPlusButtonsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 741DEF6A1F49C98300516A93 /* LGPlusButtonsView.m */; };
+		741DEF731F49C98300516A93 /* LGPlusButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 741DEF6C1F49C98300516A93 /* LGPlusButton.m */; };
+		741DEF741F49C98300516A93 /* LGPlusButtonDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 741DEF6E1F49C98300516A93 /* LGPlusButtonDescription.m */; };
+		741DEF751F49C98300516A93 /* LGPlusButtonsViewShared.m in Sources */ = {isa = PBXBuildFile; fileRef = 741DEF711F49C98300516A93 /* LGPlusButtonsViewShared.m */; };
 		746FCBFE1F3E0D200090A12C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 746FCBFD1F3E0D200090A12C /* GoogleService-Info.plist */; };
 		74920FA71F3F2E1D00B68127 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74920F9F1F3F2E1D00B68127 /* String.swift */; };
 		74920FA81F3F2E1D00B68127 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74920FA01F3F2E1D00B68127 /* UIApplication.swift */; };
@@ -80,6 +84,14 @@
 		740AF2131F3EE0900019F880 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseTableViewCell.swift; path = View/TableViewCell/BaseTableViewCell.swift; sourceTree = "<group>"; };
 		740AF2141F3EE0900019F880 /* DataTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataTableViewCell.swift; path = View/TableViewCell/DataTableViewCell.swift; sourceTree = "<group>"; };
 		740AF2151F3EE0900019F880 /* DataTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DataTableViewCell.xib; path = View/TableViewCell/DataTableViewCell.xib; sourceTree = "<group>"; };
+		741DEF6A1F49C98300516A93 /* LGPlusButtonsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGPlusButtonsView.m; sourceTree = "<group>"; };
+		741DEF6B1F49C98300516A93 /* LGPlusButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGPlusButton.h; sourceTree = "<group>"; };
+		741DEF6C1F49C98300516A93 /* LGPlusButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGPlusButton.m; sourceTree = "<group>"; };
+		741DEF6D1F49C98300516A93 /* LGPlusButtonDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGPlusButtonDescription.h; sourceTree = "<group>"; };
+		741DEF6E1F49C98300516A93 /* LGPlusButtonDescription.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGPlusButtonDescription.m; sourceTree = "<group>"; };
+		741DEF6F1F49C98300516A93 /* LGPlusButtonsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGPlusButtonsView.h; sourceTree = "<group>"; };
+		741DEF701F49C98300516A93 /* LGPlusButtonsViewShared.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGPlusButtonsViewShared.h; sourceTree = "<group>"; };
+		741DEF711F49C98300516A93 /* LGPlusButtonsViewShared.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGPlusButtonsViewShared.m; sourceTree = "<group>"; };
 		746FCBFD1F3E0D200090A12C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		746FCBFF1F3E0DDF0090A12C /* MyPlace-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyPlace-Bridging-Header.h"; sourceTree = "<group>"; };
 		74920F9F1F3F2E1D00B68127 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = String.swift; path = Extension/String.swift; sourceTree = "<group>"; };
@@ -177,6 +189,30 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		741DEF681F49C8DA00516A93 /* Utill */ = {
+			isa = PBXGroup;
+			children = (
+				741DEF691F49C8F700516A93 /* MenuButton */,
+			);
+			name = Utill;
+			sourceTree = "<group>";
+		};
+		741DEF691F49C8F700516A93 /* MenuButton */ = {
+			isa = PBXGroup;
+			children = (
+				741DEF6F1F49C98300516A93 /* LGPlusButtonsView.h */,
+				741DEF6A1F49C98300516A93 /* LGPlusButtonsView.m */,
+				741DEF6B1F49C98300516A93 /* LGPlusButton.h */,
+				741DEF6C1F49C98300516A93 /* LGPlusButton.m */,
+				741DEF6D1F49C98300516A93 /* LGPlusButtonDescription.h */,
+				741DEF6E1F49C98300516A93 /* LGPlusButtonDescription.m */,
+				741DEF701F49C98300516A93 /* LGPlusButtonsViewShared.h */,
+				741DEF711F49C98300516A93 /* LGPlusButtonsViewShared.m */,
+			);
+			name = MenuButton;
+			path = Utill/MenuButton;
+			sourceTree = "<group>";
+		};
 		74920FB91F3F7A1100B68127 /* LeftVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -230,6 +266,7 @@
 				C5C1CE631A70F7C400B6E411 /* ViewController */,
 				C5C1CE641A70F7EC00B6E411 /* View */,
 				C5C1CE621A70F7AA00B6E411 /* Extension */,
+				741DEF681F49C8DA00516A93 /* Utill */,
 				C539E6501A315E87003B7CC7 /* Images.xcassets */,
 				C539E6521A315E87003B7CC7 /* LaunchScreen.xib */,
 				C539E64D1A315E87003B7CC7 /* Main.storyboard */,
@@ -641,12 +678,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				740AF2061F3EDFD20019F880 /* GoViewController.swift in Sources */,
+				741DEF741F49C98300516A93 /* LGPlusButtonDescription.m in Sources */,
 				74920FC31F3F7B3300B68127 /* MainViewController.swift in Sources */,
 				740AF2081F3EDFD20019F880 /* NonMenuController.swift in Sources */,
 				74920FAD1F3F2E1D00B68127 /* UIView.swift in Sources */,
 				740AF2111F3EE0400019F880 /* ImageHeaderView.swift in Sources */,
 				740AF2051F3EDFD20019F880 /* ExSlideMenuController.swift in Sources */,
 				74920FAE1F3F2E1D00B68127 /* UIViewController.swift in Sources */,
+				741DEF721F49C98300516A93 /* LGPlusButtonsView.m in Sources */,
+				741DEF731F49C98300516A93 /* LGPlusButton.m in Sources */,
 				C539E64A1A315E87003B7CC7 /* SlideMenuControllerSwift.xcdatamodeld in Sources */,
 				74920FAC1F3F2E1D00B68127 /* UITableViewExtension.swift in Sources */,
 				740AF20B1F3EDFD20019F880 /* SwiftViewController.swift in Sources */,
@@ -661,6 +701,7 @@
 				740AF2171F3EE0900019F880 /* DataTableViewCell.swift in Sources */,
 				74920FAB1F3F2E1D00B68127 /* UIImageView.swift in Sources */,
 				74920FAA1F3F2E1D00B68127 /* UIImage.swift in Sources */,
+				741DEF751F49C98300516A93 /* LGPlusButtonsViewShared.m in Sources */,
 				74920FA71F3F2E1D00B68127 /* String.swift in Sources */,
 				740AF20A1F3EDFD20019F880 /* SubContentsViewController.swift in Sources */,
 			);
