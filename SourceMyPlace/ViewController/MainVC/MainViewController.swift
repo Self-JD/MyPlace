@@ -15,7 +15,7 @@ class MainViewController: UIViewController, UISearchDisplayDelegate, GMSMapViewD
     //LocationManager
     
     // Menu Button
- 
+    var menuButtonsMapType: LGPlusButtonsView?
     
     
     //Google Place
@@ -103,28 +103,32 @@ class MainViewController: UIViewController, UISearchDisplayDelegate, GMSMapViewD
         
         // Menu Button
  
-        let menuButtonsMapType = LGPlusButtonsView(numberOfButtons: 4, firstButtonIsPlusButton: true, showAfterInit: true, actionHandler: { (menuButtonsMapType, title, description, index) in
-        print("Location")
+          menuButtonsMapType = LGPlusButtonsView(numberOfButtons: 4, firstButtonIsPlusButton: true, showAfterInit: true, actionHandler: { (menuButtonsMapType, title, description, index) in
+            
             if(index == 1){
                 self.mapView.mapType = .normal
             }else if(index == 2)
             {
                 self.mapView.mapType = .terrain
-            }else{
+            }else if(index == 3){
                 self.mapView.mapType = .hybrid
             }
+
+//            [self hideButtonsAnimated:YES completionHandler:nil];
+//            else
+//            [self showButtonsAnimated:YES completionHandler:nil];
         })
             
         //menuButtonsMapType?.observedScrollView = self.mapView;
         menuButtonsMapType?.coverColor = UIColor(white: 1.0, alpha: 0.7)
         menuButtonsMapType?.position = .topRight
         
-        menuButtonsMapType?.plusButtonAnimationType = .none
+        menuButtonsMapType?.plusButtonAnimationType = .rotate
         menuButtonsMapType?.setButtonsTitles(["", "", "", ""], for: .normal)
         
         menuButtonsMapType?.setDescriptionsTexts(["", "Normal", "Terrain", "Hybrid"])
         
-        menuButtonsMapType?.setButtonsImages([UIImage(named: "Camera")!, UIImage(named: "Camera")!, UIImage(named: "Picture")!, UIImage(named: "Message")!], for: .normal, for: .all)
+        menuButtonsMapType?.setButtonsImages([UIImage(named: "MapType")!, UIImage(named: "Normal")!, UIImage(named: "Terrain")!, UIImage(named: "Hybride")!], for: .normal, for: .all)
         
         
         
@@ -212,9 +216,11 @@ class MainViewController: UIViewController, UISearchDisplayDelegate, GMSMapViewD
         
         if(self.navigationController?.isNavigationBarHidden == false){
             self.navigationController?.setNavigationBarHidden(true, animated: true)
+            menuButtonsMapType?.isHidden = true
         }
         else{
             self.navigationController?.setNavigationBarHidden(false, animated: true)
+            menuButtonsMapType?.isHidden = false
         }
     }
     

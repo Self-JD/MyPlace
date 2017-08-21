@@ -1007,7 +1007,7 @@ typedef NS_ENUM(NSUInteger, LGPlusButtonDescriptionsPosition)
 
     CGPoint buttonsContentViewOrigin = CGPointZero;
     if (_position == LGPlusButtonsViewPositionBottomRight)
-        buttonsContentViewOrigin = CGPointMake(contentViewFrame.size.width-buttonsContentViewSize.width, contentViewFrame.size.height-buttonsContentViewSize.height-100);
+        buttonsContentViewOrigin = CGPointMake(contentViewFrame.size.width-buttonsContentViewSize.width, contentViewFrame.size.height-buttonsContentViewSize.height-80.f);
     else if (_position == LGPlusButtonsViewPositionBottomLeft)
         buttonsContentViewOrigin = CGPointMake(0.f, contentViewFrame.size.height-buttonsContentViewSize.height);
     else if (_position == LGPlusButtonsViewPositionTopRight)
@@ -1264,13 +1264,13 @@ typedef NS_ENUM(NSUInteger, LGPlusButtonDescriptionsPosition)
 
     LGPlusButtonDescription *description = _descriptionsArray[index];
 
-    if (self.isFirstButtonIsPlusButton && index == 0)
-    {
+   // if (self.isFirstButtonIsPlusButton && index == 0)
+   // {
         if (button.isSelected)
             [self hideButtonsAnimated:YES completionHandler:nil];
         else
             [self showButtonsAnimated:YES completionHandler:nil];
-    }
+   // }
 
     // -----
 
@@ -1425,8 +1425,12 @@ typedef NS_ENUM(NSUInteger, LGPlusButtonDescriptionsPosition)
 {
     if (self.isFirstButtonIsPlusButton)
     {
-        LGPlusButton *plusButton = _buttonsArray[0];
+        
+        for (NSInteger i=0; i<_buttonsArray.count; i++)
+        {
+        LGPlusButton *plusButton = _buttonsArray[i];
         plusButton.selected = YES;
+        }
 
         [self selectPlusButtonViewWithAnimationType:_plusButtonAnimationType
                                            animated:animated
@@ -1488,8 +1492,11 @@ typedef NS_ENUM(NSUInteger, LGPlusButtonDescriptionsPosition)
 {
     if (self.isFirstButtonIsPlusButton)
     {
-        LGPlusButton *plusButton = _buttonsArray[0];
-        plusButton.selected = NO;
+        for (NSInteger i=0; i<_buttonsArray.count; i++)
+        {
+            LGPlusButton *plusButton = _buttonsArray[i];
+            plusButton.selected = NO;
+        }
 
         [self deselectPlusButtonViewWithAnimationType:_plusButtonAnimationType
                                              animated:animated
@@ -1576,7 +1583,7 @@ typedef NS_ENUM(NSUInteger, LGPlusButtonDescriptionsPosition)
                                                      delay:0.f
                                                 animations:^(void)
              {
-                 _coverView.alpha = 1.f;
+                 _coverView.alpha = 0.1;
              }
                                                 completion:nil];
         }
@@ -1850,7 +1857,7 @@ typedef NS_ENUM(NSUInteger, LGPlusButtonDescriptionsPosition)
     else if (type == LGPlusButtonAnimationTypeRotate)
     {
         CGAffineTransform transform = CGAffineTransformIdentity;
-        transform = CGAffineTransformConcat(transform, CGAffineTransformMakeRotation(kLGPlusButtonsViewDegreesToRadians(45)));
+        transform = CGAffineTransformConcat(transform, CGAffineTransformMakeRotation(kLGPlusButtonsViewDegreesToRadians(180)));
 
         if (animated)
         {

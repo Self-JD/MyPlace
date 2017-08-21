@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SourceMyPlace/ViewController/MainVC/MainViewController.swift"
-            timestampString = "524943631.804966"
+            timestampString = "525031233.847101"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "366"
-            endingLineNumber = "366"
+            startingLineNumber = "372"
+            endingLineNumber = "372"
             landmarkName = "searchBar(_:textDidChange:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,12 +26,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SourceMyPlace/ViewController/MainVC/MainViewController.swift"
-            timestampString = "524943631.804966"
+            timestampString = "525031233.847101"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "375"
-            endingLineNumber = "375"
+            startingLineNumber = "381"
+            endingLineNumber = "381"
             landmarkName = "searchBarShouldBeginEditing(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SourceMyPlace/Utill/MenuButton/LGPlusButtonsView.m"
+            timestampString = "525024877.512911"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1263"
+            endingLineNumber = "1263"
+            landmarkName = "-buttonAction:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
