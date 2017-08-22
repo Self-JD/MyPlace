@@ -1,0 +1,27 @@
+/* 
+  Localizable.string.strings
+  MyPlace
+
+  Created by Jaydeep Patoliya on 22/08/17.
+  Copyright © 2017 Jaydeep Patoliya. All rights reserved.
+*/
+
+//Location Alert Message
+"Turn On Location Service to Allow \"MyPLace\" to Determine Your Location" = "Turn On Location Service to Allow \"MyPLace\" to Determine Your Location";
+"We use your current location to provide more accurate information about your buddies." = "We use your current location to provide more accurate information about your buddies.";
+"Cancel" = "Cancel";
+"Go to Settings" = "Go to Settings";
+
+//Map Type
+"Normal"="Normal";
+"Terrain"="Terrain";
+"Hybrid"= "Hybrid";
+
+//Left Menu Opetions
+"Home"="Home";
+"Manage Places"="Manage Places";
+"Set Alert" = "Set Alert";
+"Go" = "Go";
+"NonMenu"= "NonMenu";
+"Sign Out" = "Sign Out";
+

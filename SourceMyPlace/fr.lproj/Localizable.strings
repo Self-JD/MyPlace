@@ -1,0 +1,26 @@
+/* 
+  Localizable.strings
+  MyPlace
+
+  Created by Jaydeep Patoliya on 22/08/17.
+  Copyright © 2017 Jaydeep Patoliya. All rights reserved.
+*/
+
+//Location Alert Message
+"Turn On Location Service to Allow \"MyPLace\" to Determine Your Location" = "Activez le service de localisation pour autoriser \"MyPLace\" à déterminer votre emplacement";
+"We use your current location to provide more accurate information about your buddies." = "Nous utilisons votre position actuelle afin de fournir des renseignements plus précis à propos de vos amis.";
+"Cancel" = "Annuler";
+"Go to Settings"="Allez dans Réglages";
+
+//Map Type
+"Normal" ="La normale";
+"Terrain"="Terrain";
+"Hybrid"= "Hybrid";
+
+//Left Menu Opetions
+"Home"="Accueil";
+"Manage Places"="Gérer les lieux";
+"Set Alert" = "Définir l'alerte";
+"Go" = "Aller";
+"NonMenu"= "NonMenu";
+"Sign Out"= "Déconnexion";

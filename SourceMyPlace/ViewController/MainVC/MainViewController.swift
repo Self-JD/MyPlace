@@ -303,12 +303,12 @@ class MainViewController: UIViewController, UISearchDisplayDelegate, GMSMapViewD
 
     //Utils Functions
     func callLocationAlerview() {
-        let alert = UIAlertController(title: "Turn On Location Service to Allow \"MyPLace\" to Determine Your Location", message: "We use your current location to provide more accurate information about your buddies.", preferredStyle: UIAlertControllerStyle.alert)
+        let alert = UIAlertController(title: NSLocalizedString("Turn On Location Service to Allow \"MyPLace\" to Determine Your Location", comment: ""), message: NSLocalizedString("We use your current location to provide more accurate information about your buddies.", comment: ""), preferredStyle: UIAlertControllerStyle.alert)
         
-        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: { (alert: UIAlertAction!) in
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: UIAlertActionStyle.cancel, handler: { (alert: UIAlertAction!) in
             print("Cancel")
         }))
-        alert.addAction(UIAlertAction(title: "Go to Settings", style: UIAlertActionStyle.default, handler: { (alert: UIAlertAction!) in
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Go to Settings", comment: ""), style: UIAlertActionStyle.default, handler: { (alert: UIAlertAction!) in
             print("GPS")
             UIApplication.shared.openURL(NSURL(string:UIApplicationOpenSettingsURLString)! as URL)
         }))
@@ -341,7 +341,7 @@ class MainViewController: UIViewController, UISearchDisplayDelegate, GMSMapViewD
         menuButtonsMapType?.plusButtonAnimationType = .rotate
         menuButtonsMapType?.setButtonsTitles(["", "", "", ""], for: .normal)
         
-        menuButtonsMapType?.setDescriptionsTexts(["", "Normal", "Terrain", "Hybrid"])
+        menuButtonsMapType?.setDescriptionsTexts(["", NSLocalizedString("Normal", comment: ""), NSLocalizedString("Terrain", comment: ""),NSLocalizedString("Hybrid", comment: "")])
         
         menuButtonsMapType?.setButtonsImages([UIImage(named: "MapType")!, UIImage(named: "Normal")!, UIImage(named: "Terrain")!, UIImage(named: "Hybride")!], for: .normal, for: .all)
         

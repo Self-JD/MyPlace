@@ -23,7 +23,7 @@ protocol LeftMenuProtocol : class {
 class LeftViewController : UIViewController, LeftMenuProtocol, GIDSignInUIDelegate, MyGoogleObjDelegate {
     
     @IBOutlet weak var tableView: UITableView!
-    var menus = ["Home", "Manage Places", "Set Alert", "Go", "NonMenu"]
+    var menus = [NSLocalizedString("Home", comment: ""),NSLocalizedString("Manage Places", comment: "") ,NSLocalizedString("Set Alert", comment: ""),NSLocalizedString("GO", comment: ""), NSLocalizedString("NonMenu", comment: "")]
     var mainViewController: UIViewController!
     var swiftViewController: UIViewController!
     var javaViewController: UIViewController!
@@ -87,7 +87,7 @@ class LeftViewController : UIViewController, LeftMenuProtocol, GIDSignInUIDelega
         let lastName = user?.profile.familyName
         self.imageHeaderView.nameLable.text = firstName!+" "+lastName!
         self.imageHeaderView.emailLable.text = user?.profile.email
-        menus.append("Sign Out")
+        menus.append(NSLocalizedString("Sign Out", comment: ""))
         self.tableView.reloadData()
     }
     

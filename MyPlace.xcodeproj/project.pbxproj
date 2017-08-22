@@ -20,7 +20,6 @@
 		740AF20B1F3EDFD20019F880 /* SwiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740AF2021F3EDFD20019F880 /* SwiftViewController.swift */; };
 		740AF20E1F3EDFEA0019F880 /* SubContentsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 740AF20C1F3EDFEA0019F880 /* SubContentsViewController.storyboard */; };
 		740AF2111F3EE0400019F880 /* ImageHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740AF20F1F3EE0400019F880 /* ImageHeaderView.swift */; };
-		740AF2121F3EE0400019F880 /* ImageHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 740AF2101F3EE0400019F880 /* ImageHeaderView.xib */; };
 		740AF2161F3EE0900019F880 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740AF2131F3EE0900019F880 /* BaseTableViewCell.swift */; };
 		740AF2171F3EE0900019F880 /* DataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740AF2141F3EE0900019F880 /* DataTableViewCell.swift */; };
 		740AF2181F3EE0900019F880 /* DataTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 740AF2151F3EE0900019F880 /* DataTableViewCell.xib */; };
@@ -29,6 +28,8 @@
 		741DEF741F49C98300516A93 /* LGPlusButtonDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 741DEF6E1F49C98300516A93 /* LGPlusButtonDescription.m */; };
 		741DEF751F49C98300516A93 /* LGPlusButtonsViewShared.m in Sources */ = {isa = PBXBuildFile; fileRef = 741DEF711F49C98300516A93 /* LGPlusButtonsViewShared.m */; };
 		746FCBFE1F3E0D200090A12C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 746FCBFD1F3E0D200090A12C /* GoogleService-Info.plist */; };
+		7470C7DC1F4C90AA005E3DE2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7470C7DA1F4C90AA005E3DE2 /* Localizable.strings */; };
+		74918AEF1F4CB38A00224A88 /* ImageHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74918AF11F4CB38A00224A88 /* ImageHeaderView.xib */; };
 		74920FA71F3F2E1D00B68127 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74920F9F1F3F2E1D00B68127 /* String.swift */; };
 		74920FA81F3F2E1D00B68127 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74920FA01F3F2E1D00B68127 /* UIApplication.swift */; };
 		74920FA91F3F2E1D00B68127 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74920FA11F3F2E1D00B68127 /* UIColor.swift */; };
@@ -80,7 +81,6 @@
 		740AF2021F3EDFD20019F880 /* SwiftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftViewController.swift; path = ViewController/SwiftViewController.swift; sourceTree = "<group>"; };
 		740AF20D1F3EDFEA0019F880 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SubContentsViewController.storyboard; sourceTree = "<group>"; };
 		740AF20F1F3EE0400019F880 /* ImageHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageHeaderView.swift; path = View/ImageHeaderView.swift; sourceTree = "<group>"; };
-		740AF2101F3EE0400019F880 /* ImageHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ImageHeaderView.xib; path = View/ImageHeaderView.xib; sourceTree = "<group>"; };
 		740AF2131F3EE0900019F880 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseTableViewCell.swift; path = View/TableViewCell/BaseTableViewCell.swift; sourceTree = "<group>"; };
 		740AF2141F3EE0900019F880 /* DataTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataTableViewCell.swift; path = View/TableViewCell/DataTableViewCell.swift; sourceTree = "<group>"; };
 		740AF2151F3EE0900019F880 /* DataTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DataTableViewCell.xib; path = View/TableViewCell/DataTableViewCell.xib; sourceTree = "<group>"; };
@@ -94,6 +94,13 @@
 		741DEF711F49C98300516A93 /* LGPlusButtonsViewShared.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGPlusButtonsViewShared.m; sourceTree = "<group>"; };
 		746FCBFD1F3E0D200090A12C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		746FCBFF1F3E0DDF0090A12C /* MyPlace-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyPlace-Bridging-Header.h"; sourceTree = "<group>"; };
+		7470C7D71F4C8F83005E3DE2 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		7470C7D81F4C8F83005E3DE2 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
+		7470C7D91F4C8F83005E3DE2 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/SubContentsViewController.strings; sourceTree = "<group>"; };
+		7470C7DB1F4C90AA005E3DE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		7470C7DD1F4C9110005E3DE2 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		74918AF01F4CB38A00224A88 /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fr; path = fr.lproj/ImageHeaderView.xib; sourceTree = "<group>"; };
+		74918AF41F4CB38F00224A88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/ImageHeaderView.strings; sourceTree = "<group>"; };
 		74920F9F1F3F2E1D00B68127 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = String.swift; path = Extension/String.swift; sourceTree = "<group>"; };
 		74920FA01F3F2E1D00B68127 /* UIApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIApplication.swift; path = Extension/UIApplication.swift; sourceTree = "<group>"; };
 		74920FA11F3F2E1D00B68127 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIColor.swift; path = Extension/UIColor.swift; sourceTree = "<group>"; };
@@ -274,6 +281,7 @@
 				C539E6481A315E87003B7CC7 /* SlideMenuControllerSwift.xcdatamodeld */,
 				C539E6441A315E87003B7CC7 /* Supporting Files */,
 				746FCBFF1F3E0DDF0090A12C /* MyPlace-Bridging-Header.h */,
+				7470C7DA1F4C90AA005E3DE2 /* Localizable.strings */,
 			);
 			path = SourceMyPlace;
 			sourceTree = "<group>";
@@ -359,7 +367,7 @@
 			isa = PBXGroup;
 			children = (
 				740AF20F1F3EE0400019F880 /* ImageHeaderView.swift */,
-				740AF2101F3EE0400019F880 /* ImageHeaderView.xib */,
+				74918AF11F4CB38A00224A88 /* ImageHeaderView.xib */,
 				C5498C831BE89BD90076A7C5 /* TableViewCell */,
 			);
 			name = View;
@@ -473,6 +481,7 @@
 			knownRegions = (
 				en,
 				Base,
+				fr,
 			);
 			mainGroup = C539E6381A315E87003B7CC7;
 			productRefGroup = C539E6421A315E87003B7CC7 /* Products */;
@@ -501,8 +510,9 @@
 				74D447361F425EC800084CE9 /* GoogleMaps.bundle in Resources */,
 				746FCBFE1F3E0D200090A12C /* GoogleService-Info.plist in Resources */,
 				740AF20E1F3EDFEA0019F880 /* SubContentsViewController.storyboard in Resources */,
-				740AF2121F3EE0400019F880 /* ImageHeaderView.xib in Resources */,
+				74918AEF1F4CB38A00224A88 /* ImageHeaderView.xib in Resources */,
 				740AF2181F3EE0900019F880 /* DataTableViewCell.xib in Resources */,
+				7470C7DC1F4C90AA005E3DE2 /* Localizable.strings in Resources */,
 				0E75C5A61BE3CAFE00844634 /* Info.plist in Resources */,
 				C539E64F1A315E87003B7CC7 /* Main.storyboard in Resources */,
 				C539E6541A315E87003B7CC7 /* LaunchScreen.xib in Resources */,
@@ -730,14 +740,35 @@
 			isa = PBXVariantGroup;
 			children = (
 				740AF20D1F3EDFEA0019F880 /* Base */,
+				7470C7D91F4C8F83005E3DE2 /* fr */,
 			);
 			name = SubContentsViewController.storyboard;
+			sourceTree = "<group>";
+		};
+		7470C7DA1F4C90AA005E3DE2 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7470C7DB1F4C90AA005E3DE2 /* Base */,
+				7470C7DD1F4C9110005E3DE2 /* fr */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		74918AF11F4CB38A00224A88 /* ImageHeaderView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				74918AF01F4CB38A00224A88 /* fr */,
+				74918AF41F4CB38F00224A88 /* Base */,
+			);
+			name = ImageHeaderView.xib;
+			path = View;
 			sourceTree = "<group>";
 		};
 		C539E64D1A315E87003B7CC7 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				C539E64E1A315E87003B7CC7 /* Base */,
+				7470C7D81F4C8F83005E3DE2 /* fr */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -746,6 +777,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				C539E6531A315E87003B7CC7 /* Base */,
+				7470C7D71F4C8F83005E3DE2 /* fr */,
 			);
 			name = LaunchScreen.xib;
 			sourceTree = "<group>";
@@ -809,6 +841,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -857,6 +890,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
