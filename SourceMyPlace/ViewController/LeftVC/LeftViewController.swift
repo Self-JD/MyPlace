@@ -23,7 +23,7 @@ protocol LeftMenuProtocol : class {
 class LeftViewController : UIViewController, LeftMenuProtocol, GIDSignInUIDelegate, MyGoogleObjDelegate {
     
     @IBOutlet weak var tableView: UITableView!
-    var menus = [NSLocalizedString("Home", comment: ""),NSLocalizedString("Manage Places", comment: "") ,NSLocalizedString("Set Alert", comment: ""),NSLocalizedString("GO", comment: ""), NSLocalizedString("NonMenu", comment: "")]
+    var menus = [NSLocalizedString("Home", comment: ""),NSLocalizedString("Manage Places", comment: "") ,NSLocalizedString("Set Alert", comment: ""),NSLocalizedString("Go", comment: ""), NSLocalizedString("NonMenu", comment: "")]
     var mainViewController: UIViewController!
     var swiftViewController: UIViewController!
     var javaViewController: UIViewController!

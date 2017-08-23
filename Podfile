@@ -10,6 +10,7 @@ target 'MyPlace' do
   	pod 'GoogleMaps'
   	pod 'GooglePlaces'
     pod 'GooglePlacePicker'
+    pod 'Alamofire'
 
   target 'MyPlaceTests' do
     inherit! :search_paths

@@ -1007,11 +1007,11 @@ typedef NS_ENUM(NSUInteger, LGPlusButtonDescriptionsPosition)
 
     CGPoint buttonsContentViewOrigin = CGPointZero;
     if (_position == LGPlusButtonsViewPositionBottomRight)
-        buttonsContentViewOrigin = CGPointMake(contentViewFrame.size.width-buttonsContentViewSize.width, contentViewFrame.size.height-buttonsContentViewSize.height-80.f);
+        buttonsContentViewOrigin = CGPointMake(contentViewFrame.size.width-buttonsContentViewSize.width, contentViewFrame.size.height-buttonsContentViewSize.height-100);
     else if (_position == LGPlusButtonsViewPositionBottomLeft)
         buttonsContentViewOrigin = CGPointMake(0.f, contentViewFrame.size.height-buttonsContentViewSize.height);
     else if (_position == LGPlusButtonsViewPositionTopRight)
-        buttonsContentViewOrigin = CGPointMake(contentViewFrame.size.width-buttonsContentViewSize.width, 100.f);
+        buttonsContentViewOrigin = CGPointMake(contentViewFrame.size.width-buttonsContentViewSize.width, 70.f);
     else if (_position == LGPlusButtonsViewPositionTopLeft)
         buttonsContentViewOrigin = CGPointMake(0.f, 0.f);
 

@@ -27,9 +27,10 @@
 		741DEF731F49C98300516A93 /* LGPlusButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 741DEF6C1F49C98300516A93 /* LGPlusButton.m */; };
 		741DEF741F49C98300516A93 /* LGPlusButtonDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 741DEF6E1F49C98300516A93 /* LGPlusButtonDescription.m */; };
 		741DEF751F49C98300516A93 /* LGPlusButtonsViewShared.m in Sources */ = {isa = PBXBuildFile; fileRef = 741DEF711F49C98300516A93 /* LGPlusButtonsViewShared.m */; };
+		744D19F41F4CC52C00EA785B /* ImageHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 744D19F61F4CC52C00EA785B /* ImageHeaderView.xib */; };
+		744D19FA1F4DF5A500EA785B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744D19F91F4DF5A500EA785B /* Constants.swift */; };
 		746FCBFE1F3E0D200090A12C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 746FCBFD1F3E0D200090A12C /* GoogleService-Info.plist */; };
 		7470C7DC1F4C90AA005E3DE2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7470C7DA1F4C90AA005E3DE2 /* Localizable.strings */; };
-		74918AEF1F4CB38A00224A88 /* ImageHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74918AF11F4CB38A00224A88 /* ImageHeaderView.xib */; };
 		74920FA71F3F2E1D00B68127 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74920F9F1F3F2E1D00B68127 /* String.swift */; };
 		74920FA81F3F2E1D00B68127 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74920FA01F3F2E1D00B68127 /* UIApplication.swift */; };
 		74920FA91F3F2E1D00B68127 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74920FA11F3F2E1D00B68127 /* UIColor.swift */; };
@@ -92,6 +93,9 @@
 		741DEF6F1F49C98300516A93 /* LGPlusButtonsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGPlusButtonsView.h; sourceTree = "<group>"; };
 		741DEF701F49C98300516A93 /* LGPlusButtonsViewShared.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGPlusButtonsViewShared.h; sourceTree = "<group>"; };
 		741DEF711F49C98300516A93 /* LGPlusButtonsViewShared.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGPlusButtonsViewShared.m; sourceTree = "<group>"; };
+		744D19F51F4CC52C00EA785B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ImageHeaderView.xib; sourceTree = "<group>"; };
+		744D19F81F4CC53100EA785B /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/ImageHeaderView.strings; sourceTree = "<group>"; };
+		744D19F91F4DF5A500EA785B /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		746FCBFD1F3E0D200090A12C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		746FCBFF1F3E0DDF0090A12C /* MyPlace-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyPlace-Bridging-Header.h"; sourceTree = "<group>"; };
 		7470C7D71F4C8F83005E3DE2 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
@@ -99,8 +103,6 @@
 		7470C7D91F4C8F83005E3DE2 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/SubContentsViewController.strings; sourceTree = "<group>"; };
 		7470C7DB1F4C90AA005E3DE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7470C7DD1F4C9110005E3DE2 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
-		74918AF01F4CB38A00224A88 /* fr */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = fr; path = fr.lproj/ImageHeaderView.xib; sourceTree = "<group>"; };
-		74918AF41F4CB38F00224A88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/ImageHeaderView.strings; sourceTree = "<group>"; };
 		74920F9F1F3F2E1D00B68127 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = String.swift; path = Extension/String.swift; sourceTree = "<group>"; };
 		74920FA01F3F2E1D00B68127 /* UIApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIApplication.swift; path = Extension/UIApplication.swift; sourceTree = "<group>"; };
 		74920FA11F3F2E1D00B68127 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIColor.swift; path = Extension/UIColor.swift; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				741DEF691F49C8F700516A93 /* MenuButton */,
+				744D19F91F4DF5A500EA785B /* Constants.swift */,
 			);
 			name = Utill;
 			sourceTree = "<group>";
@@ -367,7 +370,7 @@
 			isa = PBXGroup;
 			children = (
 				740AF20F1F3EE0400019F880 /* ImageHeaderView.swift */,
-				74918AF11F4CB38A00224A88 /* ImageHeaderView.xib */,
+				744D19F61F4CC52C00EA785B /* ImageHeaderView.xib */,
 				C5498C831BE89BD90076A7C5 /* TableViewCell */,
 			);
 			name = View;
@@ -508,9 +511,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				74D447361F425EC800084CE9 /* GoogleMaps.bundle in Resources */,
+				744D19F41F4CC52C00EA785B /* ImageHeaderView.xib in Resources */,
 				746FCBFE1F3E0D200090A12C /* GoogleService-Info.plist in Resources */,
 				740AF20E1F3EDFEA0019F880 /* SubContentsViewController.storyboard in Resources */,
-				74918AEF1F4CB38A00224A88 /* ImageHeaderView.xib in Resources */,
 				740AF2181F3EE0900019F880 /* DataTableViewCell.xib in Resources */,
 				7470C7DC1F4C90AA005E3DE2 /* Localizable.strings in Resources */,
 				0E75C5A61BE3CAFE00844634 /* Info.plist in Resources */,
@@ -657,12 +660,14 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-MyPlace/Pods-MyPlace-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
@@ -698,6 +703,7 @@
 				741DEF721F49C98300516A93 /* LGPlusButtonsView.m in Sources */,
 				741DEF731F49C98300516A93 /* LGPlusButton.m in Sources */,
 				C539E64A1A315E87003B7CC7 /* SlideMenuControllerSwift.xcdatamodeld in Sources */,
+				744D19FA1F4DF5A500EA785B /* Constants.swift in Sources */,
 				74920FAC1F3F2E1D00B68127 /* UITableViewExtension.swift in Sources */,
 				740AF20B1F3EDFD20019F880 /* SwiftViewController.swift in Sources */,
 				C539E6471A315E87003B7CC7 /* AppDelegate.swift in Sources */,
@@ -745,6 +751,16 @@
 			name = SubContentsViewController.storyboard;
 			sourceTree = "<group>";
 		};
+		744D19F61F4CC52C00EA785B /* ImageHeaderView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				744D19F51F4CC52C00EA785B /* Base */,
+				744D19F81F4CC53100EA785B /* fr */,
+			);
+			name = ImageHeaderView.xib;
+			path = View;
+			sourceTree = "<group>";
+		};
 		7470C7DA1F4C90AA005E3DE2 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -752,16 +768,6 @@
 				7470C7DD1F4C9110005E3DE2 /* fr */,
 			);
 			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
-		74918AF11F4CB38A00224A88 /* ImageHeaderView.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				74918AF01F4CB38A00224A88 /* fr */,
-				74918AF41F4CB38F00224A88 /* Base */,
-			);
-			name = ImageHeaderView.xib;
-			path = View;
 			sourceTree = "<group>";
 		};
 		C539E64D1A315E87003B7CC7 /* Main.storyboard */ = {
