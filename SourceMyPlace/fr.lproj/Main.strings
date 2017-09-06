@@ -5,6 +5,9 @@
 /* Class = "UILabel"; text = "RightViewController"; ObjectID = "1cV-XC-cqE"; */
 "1cV-XC-cqE.text" = "RightViewController";
 
+/* Class = "UILabel"; text = "Help"; ObjectID = "5z8-O6-Hol"; */
+"5z8-O6-Hol.text" = "Help";
+
 /* Class = "UILabel"; text = "SwiftViewController"; ObjectID = "Bao-vm-zME"; */
 "Bao-vm-zME.text" = "SwiftViewController";
 

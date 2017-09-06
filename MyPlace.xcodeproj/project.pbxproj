@@ -42,6 +42,7 @@
 		74920FBB1F3F7A2200B68127 /* LeftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74920FBA1F3F7A2200B68127 /* LeftViewController.swift */; };
 		74920FC11F3F7A4D00B68127 /* RightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74920FC01F3F7A4D00B68127 /* RightViewController.swift */; };
 		74920FC31F3F7B3300B68127 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74920FC21F3F7B3300B68127 /* MainViewController.swift */; };
+		74D4406D1F607248002DC184 /* ServiceHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D4406C1F607248002DC184 /* ServiceHandler.swift */; };
 		74D447341F425E7700084CE9 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74D447331F425E7700084CE9 /* GoogleMaps.framework */; };
 		74D447361F425EC800084CE9 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 74D447351F425EC800084CE9 /* GoogleMaps.bundle */; };
 		C24D3B6CA5A37349DFDCEDC7 /* Pods_MyPlace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36E43DF557E398565236047A /* Pods_MyPlace.framework */; };
@@ -99,7 +100,6 @@
 		746FCBFD1F3E0D200090A12C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		746FCBFF1F3E0DDF0090A12C /* MyPlace-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyPlace-Bridging-Header.h"; sourceTree = "<group>"; };
 		7470C7D71F4C8F83005E3DE2 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		7470C7D81F4C8F83005E3DE2 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
 		7470C7D91F4C8F83005E3DE2 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/SubContentsViewController.strings; sourceTree = "<group>"; };
 		7470C7DB1F4C90AA005E3DE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7470C7DD1F4C9110005E3DE2 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -114,8 +114,10 @@
 		74920FBA1F3F7A2200B68127 /* LeftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LeftViewController.swift; path = ViewController/LeftVC/LeftViewController.swift; sourceTree = "<group>"; };
 		74920FC01F3F7A4D00B68127 /* RightViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RightViewController.swift; path = ViewController/RightVC/RightViewController.swift; sourceTree = "<group>"; };
 		74920FC21F3F7B3300B68127 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = ViewController/MainVC/MainViewController.swift; sourceTree = "<group>"; };
+		74D4406C1F607248002DC184 /* ServiceHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceHandler.swift; sourceTree = "<group>"; };
 		74D447331F425E7700084CE9 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = Pods/GoogleMaps/Maps/Frameworks/GoogleMaps.framework; sourceTree = "<group>"; };
 		74D447351F425EC800084CE9 /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = Pods/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
+		74FC86C61F504F17006E4EA1 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
 		80711E7EAA1963DAF4787CE4 /* Pods-MyPlace-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPlace-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyPlace-iOS/Pods-MyPlace-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		87644A74268B0448ED268266 /* Pods_MyPlaceTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyPlaceTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A181B6EE40302447349BDD9D /* Pods-MyPlace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyPlace.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyPlace/Pods-MyPlace.debug.xcconfig"; sourceTree = "<group>"; };
@@ -247,6 +249,14 @@
 			name = RightVC;
 			sourceTree = "<group>";
 		};
+		74D4406B1F607212002DC184 /* ServiceHandler */ = {
+			isa = PBXGroup;
+			children = (
+				74D4406C1F607248002DC184 /* ServiceHandler.swift */,
+			);
+			path = ServiceHandler;
+			sourceTree = "<group>";
+		};
 		C539E6381A315E87003B7CC7 = {
 			isa = PBXGroup;
 			children = (
@@ -272,6 +282,7 @@
 		C539E6431A315E87003B7CC7 /* SourceMyPlace */ = {
 			isa = PBXGroup;
 			children = (
+				74D4406B1F607212002DC184 /* ServiceHandler */,
 				C539E6461A315E87003B7CC7 /* AppDelegate.swift */,
 				C5C1CE631A70F7C400B6E411 /* ViewController */,
 				C5C1CE641A70F7EC00B6E411 /* View */,
@@ -705,6 +716,7 @@
 				C539E64A1A315E87003B7CC7 /* SlideMenuControllerSwift.xcdatamodeld in Sources */,
 				744D19FA1F4DF5A500EA785B /* Constants.swift in Sources */,
 				74920FAC1F3F2E1D00B68127 /* UITableViewExtension.swift in Sources */,
+				74D4406D1F607248002DC184 /* ServiceHandler.swift in Sources */,
 				740AF20B1F3EDFD20019F880 /* SwiftViewController.swift in Sources */,
 				C539E6471A315E87003B7CC7 /* AppDelegate.swift in Sources */,
 				740AF2161F3EE0900019F880 /* BaseTableViewCell.swift in Sources */,
@@ -774,7 +786,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				C539E64E1A315E87003B7CC7 /* Base */,
-				7470C7D81F4C8F83005E3DE2 /* fr */,
+				74FC86C61F504F17006E4EA1 /* fr */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -876,6 +888,9 @@
 					"$(inherited)",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_TREAT_IMPLICIT_FUNCTION_DECLARATIONS_AS_ERRORS = NO;
+				GCC_TREAT_INCOMPATIBLE_POINTER_TYPE_WARNINGS_AS_ERRORS = NO;
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -918,6 +933,9 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_TREAT_IMPLICIT_FUNCTION_DECLARATIONS_AS_ERRORS = NO;
+				GCC_TREAT_INCOMPATIBLE_POINTER_TYPE_WARNINGS_AS_ERRORS = NO;
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -945,6 +963,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Pods/GoogleMaps/Maps/Frameworks",
 				);
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/SourceMyPlace/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -968,6 +987,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Pods/GoogleMaps/Maps/Frameworks",
 				);
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/SourceMyPlace/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

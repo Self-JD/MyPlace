@@ -14,6 +14,7 @@ public extension UITableView {
     }
     
     func registerCellNib(_ cellClass: AnyClass) {
+        
         let identifier = String.className(cellClass)
         let nib = UINib(nibName: identifier, bundle: nil)
         self.register(nib, forCellReuseIdentifier: identifier)

@@ -64,7 +64,7 @@ class MainViewController: UIViewController, UISearchDisplayDelegate, GMSMapViewD
         searchBar?.frame = (CGRect(x: 0, y: 0, width: 250.0, height: 44.0))
     
         resultsViewController = GMSAutocompleteResultsViewController()
-        resultsViewController?.delegate = self as? GMSAutocompleteResultsViewControllerDelegate
+        resultsViewController?.delegate = self
         
         searchController = UISearchController(searchResultsController: resultsViewController)
         searchController?.searchResultsUpdater = resultsViewController
@@ -99,34 +99,6 @@ class MainViewController: UIViewController, UISearchDisplayDelegate, GMSMapViewD
         super.didReceiveMemoryWarning()
     }
 
-    
-    @IBAction func changeMapType(sender: AnyObject) {
-        let actionSheet = UIAlertController(title: "Map Types", message: "Select map type:", preferredStyle: UIAlertControllerStyle.actionSheet)
-        
-        let normalMapTypeAction = UIAlertAction(title: "Normal", style: UIAlertActionStyle.default) { (alertAction) -> Void in
-            self.mapView.mapType = .normal
-        }
-        
-        let terrainMapTypeAction = UIAlertAction(title: "Terrain", style: UIAlertActionStyle.default) { (alertAction) -> Void in
-            self.mapView.mapType = .terrain
-        }
-        
-        let hybridMapTypeAction = UIAlertAction(title: "Hybrid", style: UIAlertActionStyle.default) { (alertAction) -> Void in
-            self.mapView.mapType = .hybrid
-        }
-        
-        let cancelAction = UIAlertAction(title: "Close", style: UIAlertActionStyle.cancel) { (alertAction) -> Void in
-            
-        }
-        
-        actionSheet.addAction(normalMapTypeAction)
-        actionSheet.addAction(terrainMapTypeAction)
-        actionSheet.addAction(hybridMapTypeAction)
-        actionSheet.addAction(cancelAction)
-        
-        present(actionSheet, animated: true, completion: nil)
-    }
-    
     //MARK: GOOGLE MAP Delegate
     func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
         
@@ -143,11 +115,24 @@ class MainViewController: UIViewController, UISearchDisplayDelegate, GMSMapViewD
     func mapView(_ mapView: GMSMapView, didLongPressAt coordinate: CLLocationCoordinate2D) {
         print("You tapped at \(coordinate.latitude), \(coordinate.longitude)")
         mapView.clear()
-        let marker = GMSMarker()
-        marker.position = CLLocationCoordinate2D(latitude: coordinate.latitude, longitude: coordinate.longitude)
-        marker.title = "\("Test Name")"
-        marker.snippet = "\(String(describing: "Test Address"))"
-        marker.map = mapView
+        
+        var addressPin = "Drop pin"
+       // ServiceHandler.getAddressFromLatLong(coordinate){
+        ServiceHandler.getAddressFromLatLong(coordinate: coordinate){ (address) in
+            print(address)
+            addressPin = address
+            
+            self.searchController?.searchBar.text = addressPin
+            
+            
+            
+            let marker = GMSMarker()
+            marker.position = CLLocationCoordinate2D(latitude: coordinate.latitude, longitude: coordinate.longitude)
+            marker.title = "\(addressPin)"
+            marker.snippet = "\(String(describing: addressPin))"
+            marker.map = mapView
+        }
+       
     }
     
     @objc(mapView:didTapPOIWithPlaceID:name:location:) func mapView(_ mapView: GMSMapView, didTapPOIWithPlaceID placeID: String, name: String, location: CLLocationCoordinate2D) {
@@ -367,12 +352,16 @@ class MainViewController: UIViewController, UISearchDisplayDelegate, GMSMapViewD
         
         menuButtonsMapType?.setButtonAt(0, titleFont: UIFont.systemFont(ofSize: 40.0), for: (UI_USER_INTERFACE_IDIOM() == .phone ? .portrait : .all))
         menuButtonsMapType?.setButtonAt(0, titleOffset: CGPoint(x: 0.0, y: -3.0), for: .all)
-        menuButtonsMapType?.setButtonAt(1, backgroundColor: UIColor(red: 1.0, green: 0.0, blue: 0.5, alpha: 1.0), for: .normal)
-        menuButtonsMapType?.setButtonAt(1, backgroundColor: UIColor(red: 1.0, green: 0.2, blue: 0.6, alpha: 1.0), for: .highlighted)
-        menuButtonsMapType?.setButtonAt(2, backgroundColor: UIColor(red: 1.0, green: 0.5, blue: 0.0, alpha: 1.0), for: .normal)
-        menuButtonsMapType?.setButtonAt(2, backgroundColor: UIColor(red: 1.0, green: 0.6, blue: 0.2, alpha: 1.0), for: .highlighted)
+        
+        menuButtonsMapType?.setButtonAt(0, backgroundColor: UIColor(red: 0.0, green: 0.7, blue: 0.0, alpha: 1.0), for: .normal)
+        menuButtonsMapType?.setButtonAt(0, backgroundColor: UIColor(red: 0.0, green: 0.7, blue: 0.0, alpha: 1.0), for: .highlighted)
+        
+        menuButtonsMapType?.setButtonAt(1, backgroundColor: UIColor(red: 0.0, green: 0.7, blue: 0.0, alpha: 1.0), for: .normal)
+        menuButtonsMapType?.setButtonAt(1, backgroundColor: UIColor(red: 0.0, green: 0.7, blue: 0.0, alpha: 1.0), for: .highlighted)
+        menuButtonsMapType?.setButtonAt(2, backgroundColor: UIColor(red: 0.0, green: 0.7, blue: 0.0, alpha: 1.0), for: .normal)
+        menuButtonsMapType?.setButtonAt(2, backgroundColor: UIColor(red: 0.0, green: 0.7, blue: 0.0, alpha: 1.0), for: .highlighted)
         menuButtonsMapType?.setButtonAt(3, backgroundColor: UIColor(red: 0.0, green: 0.7, blue: 0.0, alpha: 1.0), for: .normal)
-        menuButtonsMapType?.setButtonAt(3, backgroundColor: UIColor(red: 0.0, green: 0.8, blue: 0.0, alpha: 1.0), for: .highlighted)
+        menuButtonsMapType?.setButtonAt(3, backgroundColor: UIColor(red: 0.0, green: 0.7, blue: 0.0, alpha: 1.0), for: .highlighted)
         menuButtonsMapType?.setDescriptionsBackgroundColor(UIColor.white)
         menuButtonsMapType?.setDescriptionsTextColor(UIColor.black)
         menuButtonsMapType?.setDescriptionsLayerShadowColor (UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1.0))
